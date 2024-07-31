@@ -19,16 +19,6 @@ const data = [
     ],
   },
   {
-    name: "Армстронг",
-    imageUrls: [
-      "/img/armstrong/IMG_1.JPG",
-      "/img/armstrong/IMG_2.JPG",
-      "/img/armstrong/IMG_3.JPG",
-      "/img/armstrong/IMG_4.JPG",
-      "/img/armstrong/IMG_5.JPG",
-    ],
-  },
-  {
     name: "Речный",
     imageUrls: [
         "/img/rechniy/IMG_1.JPG",
@@ -43,6 +33,17 @@ const data = [
         "/img/rechniy/IMG_13.jpg",
     ],
   },
+  {
+    name: "Армстронг",
+    imageUrls: [
+      "/img/armstrong/IMG_1.JPG",
+      "/img/armstrong/IMG_2.JPG",
+      "/img/armstrong/IMG_3.JPG",
+      "/img/armstrong/IMG_4.JPG",
+      "/img/armstrong/IMG_5.JPG",
+    ],
+  },
+  
 ];
 
 export default function TabOurwork() {
@@ -57,13 +58,13 @@ export default function TabOurwork() {
 
   return (
     <>
-      <div className="flex flex-wrap flex-row  sm:justify-center xsm:justify-evenly items-center gap-2 sm:gap-10">
+      <div className="flex flex-wrap flex-row  justify-center xsm:justify-evenly items-center gap-4  sm:gap-10">
         {data.map((item) => (
           <Button
             key={item.name}
-            className={`rounded-full font-siteFont text-white lg:text-sm ml-4 ${
+            className={`rounded-full font-siteFont text-white lg:text-sm ${
               activeButton === item.name
-                ? "border-none"
+                ? "border-transparent"
                 : "border-white"
             }`}
             variant="outlined"
@@ -97,7 +98,7 @@ export default function TabOurwork() {
           <div key={index} className="grid gap-4">
             <div>
               <img
-                className="h-[250px] lg:h-[350px] xl:h-[400px] max-w-full sm:w-[250px] md:max-w-full  lg:w-[300px] rounded-lg object-cover object-center"
+                className="border-2 border-orange-300 h-[250px] lg:h-[350px] xl:h-[400px] max-w-full sm:w-[250px] md:max-w-full  lg:w-[300px] rounded-lg object-cover object-center"
                 src={src}
                 alt="Image"
               />

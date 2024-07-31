@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   Navbar as MTNavbar,
   MobileNav,
@@ -28,7 +28,7 @@ export function Navbar({ brandName, routes, action }) {
           as="li"
           variant="paragraph"
           color="inherit"
-          className="capitalize "
+          className="capitalize"
         >
           {main ? 
             <Link 
