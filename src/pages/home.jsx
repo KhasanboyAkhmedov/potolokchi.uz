@@ -28,7 +28,7 @@ export function Home() {
               <p className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-siteFont font-medium text-white">
                 Потолки нового уровня
               </p>
-              <p className="text-white text-sm sm:text-lg lg:text-xl opacity-80 font-siteFont font-medium">
+              <p className="text-white text-base sm:text-lg lg:text-xl opacity-80 font-siteFont font-medium">
                 Мы воплощаем ваши идеи в реальность, создавая уют и стиль!
               </p>
               <Button onClick={(e) => {
@@ -57,7 +57,7 @@ export function Home() {
       </section>
       <section id="our-products" className=" px-4 pb-20 pt-4 bg-[#00544F]">
         <div className="container mx-auto ">
-          <div className="lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
+          <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
             {[0, 1,2].map((_, index) => (
               <div className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
                <img src={`/img/feature_card_${index + 1}.png`} />
@@ -70,7 +70,7 @@ export function Home() {
             </Typography>
             <Carousel
               additionalTransfrom={0}
-              arrows
+              arrows={false}
               autoPlaySpeed={3000}
               centerMode={false}
               className="mx-auto"
@@ -85,7 +85,7 @@ export function Home() {
               pauseOnHover
               renderArrowsWhenDisabled={false}
               renderButtonGroupOutside={false}
-              renderDotsOutside
+              customButtonGroup={<CustomButtonGroup/>}
               responsive={{
                 desktop: {
                   breakpoint: {
@@ -122,7 +122,7 @@ export function Home() {
               swipeable
             >
               {carousel.map((item, index) => (
-                <Card key={index} className=" shadow-lg border shadow-gray-500/10 rounded-lg mx-5">
+                <Card key={index} className=" shadow-lg border shadow-gray-500/10 rounded-lg mx-5 text-center">
                   <CardHeader floated={false} className="relative h-56">
                     <img
                       alt="Card Image"
@@ -138,7 +138,7 @@ export function Home() {
                       {item.name}
                     </Typography>
                     <Typography className="font-normal font-siteFont  text-blue-gray-500">
-                      {item.description}
+                      {item.description.length > 141 ? item.description.slice(0, 141) + '...' : item.description}
                     </Typography>
                     <Button 
                       className="rounded-full mt-4 px-6 sm:px-8 py-4 sm:py-5 font-siteFont font-medium"
@@ -187,3 +187,26 @@ export function Home() {
 
 
 export default Home;
+
+
+import React from 'react'
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+
+function CustomButtonGroup({ next, previous }) {
+  return (
+    <>
+      <button
+        onClick={previous}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 rounded-full p-2 shadow-md"
+      >
+        <ChevronLeftIcon className="w-6 h-6 text-white" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 rounded-full p-2 shadow-md"
+      >
+        <ChevronRightIcon className="w-6 h-6 text-white " />
+      </button>
+    </>
+  )
+}

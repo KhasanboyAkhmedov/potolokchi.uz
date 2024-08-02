@@ -5,7 +5,7 @@ module.exports = withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      'xsm': [{ 'min': '436px','max' : '640px'}]
+      'xsm': [{ 'min': '430px','max' : '640px'}]
     },
     extend: {
       fontFamily: {

@@ -8,7 +8,7 @@ export function Footer() {
     <footer className=" font-siteFont flex justify-center">
       <div className="relative h-full w-full bg-[url('/img/bg_footer.jpg')] bg-cover bg-center flex justify-center md:justify-end  items-center py-10  ">
         {/* <div className="bg-[#00544F] max-w-xl w-full sm:w-auto px-8 py-12 sm:py-16 mx-auto md:mr-8 sm:rounded-3xl space-y-6"> */}
-        <div className="bg-[#00544F] max-w-xl w-[280px] xsm:w-[350px] sm:w-auto px-8 py-12 sm:py-16  md:mr-8 rounded-3xl space-y-6">
+        <div className="bg-[#00544F] max-w-xl w-[90%] xsm:w-[350px] sm:w-auto px-8 py-12 sm:py-16  md:mr-8 rounded-3xl space-y-6">
           <div className="flex items-center gap-4">
             <img
               className="h-6 w-auto"
@@ -17,7 +17,7 @@ export function Footer() {
             />
             <a href='https://yandex.ru/maps?whatshere%5Bpoint%5D=69.33813607119373%2C41.27625253467027&whatshere%5Bzoom%5D=17.13989&ll=69.33813607119373%2C41.27625253429472&z=17.13989&si=etvpc8cmazrj0mkc8aygc4h07r'
               target="_blank" rel="noopener noreferrer"
-              className="text-white text-lg md:text-xl lg:text-[21px]">
+              className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
               Джаркурганская улица, 20/3, Ташкент
             </a>
           </div>
@@ -27,7 +27,7 @@ export function Footer() {
               src="/img/phone-call.png"
               alt="phone"
             />
-            <a href="tel:+998945552208" className="text-white text-lg md:text-xl lg:text-[21px]">
+            <a href="tel:+998945552208" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
             +998 (94) 555-22-08
             </a>
           </div>
@@ -37,7 +37,7 @@ export function Footer() {
               src="/img/phone-call.png"
               alt="phone"
             />
-            <a href="tel:+998945552204" className="text-white text-lg md:text-xl lg:text-[21px]">
+            <a href="tel:+998945552204" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
             +998 (94) 555-22-04
             </a>
           </div>
@@ -47,7 +47,9 @@ export function Footer() {
               src="/img/instagram.png"
               alt="instagram"
             />
-            <a href="https://www.instagram.com/potolokchi.uz"  target="_blank" rel="noopener noreferrer"className="text-white text-lg md:text-xl lg:text-[21px]">Instagram</a>
+            <a href="https://www.instagram.com/potolokchi.uz"  target="_blank" 
+            rel="noopener noreferrer" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
+              Instagram</a>
           </div>
           <div className="flex items-center gap-4">
             <img
@@ -55,7 +57,7 @@ export function Footer() {
               src="/img/facebook.png"
               alt="facebook"
             />
-            <a href="/" className="text-white text-lg md:text-xl lg:text-[21px]">Facebook</a>
+            <a href="/" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">Facebook</a>
           </div>
           
           <div className="flex items-center gap-4">
@@ -64,17 +66,17 @@ export function Footer() {
               src="/img/telegram.png"
               alt="telegram"
             />
-            <a href="/" className="text-white text-lg md:text-xl lg:text-[21px]">
+            <a href="/" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
               Telegram
             </a>
           </div>
           <div className="flex items-center gap-4">
             <img
             className="h-6 w-auto"
-              src="/img/instagram.png"
+              src="/img/youtube.png"
               alt="youtube"
             />
-            <a href="https://www.youtube.com/@potolokchiuz"  target="_blank" rel="noopener noreferrer" className="text-white text-lg md:text-xl lg:text-[21px]">Youtube</a>
+            <a href="https://www.youtube.com/@potolokchiuz"  target="_blank" rel="noopener noreferrer" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">Youtube</a>
           </div>
           <div className="flex justify-center ">
             <Button 

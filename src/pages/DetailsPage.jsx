@@ -21,7 +21,7 @@ const DetailsPage = () => {
       </div>
       
       <div className='pt-20 sm:pt-28 pb-4 mx-auto'>
-        <Carousel productname={item.productname} images={item.imageUrls} sizes={item.sizes} itemName={item.name} description={item.description}/>
+        <Carousel productname={item.productname} images={item.imageUrls} sizes={item.sizes} itemName={item.name} description={item.pdescription}/>
         </div>
       
       <section id='contact-us'>
