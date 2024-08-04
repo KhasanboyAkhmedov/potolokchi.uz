@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const data = [
   {
-    name: "Грилято",
+    name: "Грильято",
     imageUrls: [
       "/img/grilyato/IMG_1.JPG",
       "/img/grilyato/IMG_2.JPG",

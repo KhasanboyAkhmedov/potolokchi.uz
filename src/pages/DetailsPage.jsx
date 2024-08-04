@@ -15,7 +15,9 @@ const DetailsPage = () => {
 
  
   return (
-    <div className='bg-[#00544F]'>
+    <div className=' h-screen'>
+      <div className='bg-[#00544F]'>
+
       <div className="fixed w-full bg-[#00544F] z-10 shadow-lg ">
         <Navbar routes={routes}/>
       </div>
@@ -24,9 +26,10 @@ const DetailsPage = () => {
         <Carousel productname={item.productname} images={item.imageUrls} sizes={item.sizes} itemName={item.name} description={item.pdescription}/>
         </div>
       
-      <section id='contact-us'>
+      </div>
+      {/* <section id='contact-us'>
         <Footer/>
-      </section>
+      </section> */}
     </div>
   )
 }
