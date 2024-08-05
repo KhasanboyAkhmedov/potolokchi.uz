@@ -60,7 +60,7 @@ export function Navbar({ brandName, routes, action }) {
 
   return (
     <MTNavbar color="transparent" className="mx-auto">
-      <div className="mx-auto flex items-center justify-between text-white">
+      <div className="mx-auto  flex items-center justify-between text-white">
         <Link to="/" className="flex items-center gap-2">
           <img
             className="h-10 md:h-12 w-auto"

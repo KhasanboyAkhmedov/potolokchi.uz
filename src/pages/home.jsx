@@ -22,7 +22,7 @@ export function Home() {
         <Navbar routes={routes} />
       </div>
       <section id="home" >
-        <div className=" flex items-center justify-center max-w-8xl w-full h-[75vh] md:h-screen mx-auto bg-[url('/img/bg_header1.jpg')] bg-cover bg-center">
+        <div className=" flex items-center justify-center max-w-8xl w-full h-[75vh] md:h-screen 2xl:h-[600px] mx-auto bg-[url('/img/bg_header1.jpg')] bg-cover bg-center">
           <div className="flex flex-wrap items-center justify-center h-full">
             <div className="mx-auto w-full px-4 text-center">
               <p className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-siteFont font-medium text-white">
@@ -56,7 +56,7 @@ export function Home() {
         </div>
       </section>
       <section id="our-products" className=" px-4 pb-20 pt-4 bg-[#00544F]">
-        <div className="container mx-auto ">
+        <div className=" mx-auto ">
           <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
             {[0, 1,2].map((_, index) => (
               <div className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
@@ -74,7 +74,7 @@ export function Home() {
               autoPlaySpeed={3000}
               centerMode={false}
               className="mx-auto"
-              containerClass="container"
+              containerClass=""
               dotListClass=""
               draggable={true}
               focusOnSelect={false}
@@ -166,7 +166,7 @@ export function Home() {
       </section>
     
       <section id="our-work" className="px-4 pt-4 md:pt-30 pb-12 sm:pb-48 bg-[#00544F]">
-        <div className="container mx-auto">
+        <div className=" mx-auto">
           <Typography variant="lead" className="font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-[60px] lg:text-[88px]">
             Наши работы
           </Typography>

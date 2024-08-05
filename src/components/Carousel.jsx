@@ -23,7 +23,7 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
 
   return (
     <div className=" w-full flex flex-col ">
-      <div className='sm:w-full md:w-2/3 lg:w-1/2 py-5  px-3 sm:px-0 lg:px-3 mb-5 flex flex-row  justify-around overflow-x-auto whitespace-nowrap'>
+      <div className='mx-auto md:ml-2 w-4/5 md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 xl:ml-16 py-5 mb-5 flex flex-row  justify-around overflow-x-auto whitespace-nowrap'>
         {carousel.map((el, index) => (
           <p 
             key={index} 
@@ -44,7 +44,7 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
       <div className='flex flex-col md:flex-row  justify-around'>
         <div className='px-4'>
 
-          <div className="relative w-full h-full sm:h-[300px] md:w-[350px] md:h-[300px] lg:w-[450px] lg:h-[400px] xl:w-[600px] xl:h-[400px] rounded-xl ">
+          <div className="relative w-full  h-full sm:h-[300px] md:w-[350px] md:h-[300px] lg:w-[450px] lg:h-[400px] xl:w-[600px] xl:h-[400px] rounded-xl ">
             <img
               src={images[selectedIndex]}
               alt={`Slide ${selectedIndex}`}
@@ -68,7 +68,7 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
           </div>
 
           {/* Thumbnails */}
-          <div className="flex items-center justify-around mt-4 space-x-2">
+          <div className=" flex items-center justify-around mt-4 space-x-2">
             {images.map((image, index) => (
               <img
                 key={index}
@@ -84,7 +84,7 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
         </div>
         <div className="w-full mt-5 md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-8">
           <h1 className='text-4xl lg:text-6xl xl:text-8xl font-semibold'>{itemName}</h1>
-          <p className='text-sm lg:text-base xl:text-lg'>{description}</p>
+          <p className='text-sm lg:text-base xl:text-lg '>{description}</p>
           <div className='flex flex-row  justify-around sm:justify-normal xsm:space-x-3 md:space-x-1 xl:space-x-3 flex-wrap gap-1 xsm:gap-0'>
             {sizes.map((size, index) => (
               <button
