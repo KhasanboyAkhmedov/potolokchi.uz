@@ -15,8 +15,7 @@ const DetailsPage = () => {
 
  
   return (
-    <div className=' h-screen'>
-      <div className='bg-[#00544F]'>
+    <div className='min-h-screen flex flex-col bg-[#00544F]'>
 
       <div className="fixed w-full bg-[#00544F] z-10 shadow-lg ">
         <Navbar routes={routes}/>
@@ -24,9 +23,8 @@ const DetailsPage = () => {
       
       <div className='pt-20 sm:pt-28 pb-4 mx-auto'>
         <Carousel productname={item.productname} images={item.imageUrls} sizes={item.sizes} itemName={item.name} description={item.pdescription}/>
-        </div>
-      
       </div>
+
       {/* <section id='contact-us'>
         <Footer/>
       </section> */}

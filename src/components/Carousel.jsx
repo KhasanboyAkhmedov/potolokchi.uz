@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ChevronLeftIcon, ChevronRightIcon, ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import carousel from '@/data/carousel-data';
 
@@ -23,7 +23,7 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
 
   return (
     <div className=" w-full flex flex-col ">
-      <div className='sm:w-full mdw-2/3 lg:w-1/2 py-5  px-3 sm:px-0 lg:px-3 mb-5 flex flex-row  justify-around overflow-x-auto whitespace-nowrap'>
+      <div className='sm:w-full md:w-2/3 lg:w-1/2 py-5  px-3 sm:px-0 lg:px-3 mb-5 flex flex-row  justify-around overflow-x-auto whitespace-nowrap'>
         {carousel.map((el, index) => (
           <p 
             key={index} 
@@ -54,25 +54,27 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
               onClick={goToPrevious}
               className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
             >
-              <ChevronLeftIcon className="w-6 h-6 text-gray-700" />
+              
+              <ArrowLongLeftIcon className="w-6 h-6 text-[#E9C775]" />
             </button>
             <button
               onClick={goToNext}
               className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
             >
-              <ChevronRightIcon className="w-6 h-6 text-gray-700" />
+
+              <ArrowLongRightIcon className="w-6 h-6 text-[#E9C775]" />
             </button>
 
           </div>
 
           {/* Thumbnails */}
-          <div className="flex justify-center mt-4 space-x-2">
+          <div className="flex items-center justify-around mt-4 space-x-2">
             {images.map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt={`Thumbnail ${index}`}
-                className={`w-8 h-8 md:w-16 md:h-16 object-cover cursor-pointer border-2  rounded-md ${
+                className={`w-16 h-14 xsm:w-24 xsm:h-16 sm:w-28 sm:h-20 md:w-20 lg:w-24 xl:w-32 md:h-16 xl:h-20 object-cover cursor-pointer border-2  rounded-md ${
                   selectedIndex === index ? 'border-blue-500' : 'border-transparent'
                 }`}
                 onClick={() => handleThumbnailClick(index)}
@@ -87,10 +89,11 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
             {sizes.map((size, index) => (
               <button
                 key={index}
-                onClick={() => handleThumbnailClick(index)}
-                className={`px-3 py-1 lg:px-6 lg:py-2 border sm:border-2 ${
-                  selectedIndex === index ? 'border-blue-500' : 'border-gray-300'
-                } rounded-lg`}
+                // onClick={() => handleThumbnailClick(index)}
+                // className={`px-3 py-1 lg:px-6 lg:py-2 border sm:border-2 ${
+                //   selectedIndex === index ? 'border-blue-500' : 'border-gray-300'
+                // } rounded-lg`}
+                className={`px-3 py-1 lg:px-6 lg:py-2 border sm:border-2 border-gray-300 rounded-lg`}
               >
                 {size}
               </button>
