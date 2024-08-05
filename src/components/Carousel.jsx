@@ -22,8 +22,8 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
 
 
   return (
-    <div className=" w-full flex flex-col ">
-      <div className='mx-auto md:ml-2 w-4/5 md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 xl:ml-16 py-5 mb-5 flex flex-row  justify-around overflow-x-auto whitespace-nowrap'>
+    <div className=" flex flex-col ">
+      <div className='mx-auto md:ml-2 w-4/5 md:w-2/3 lg:w-1/2 xl:w-2/3 2xl:w-[35%] xl:ml-16 py-5 mb-5 flex flex-row  justify-around overflow-x-auto whitespace-nowrap'>
         {carousel.map((el, index) => (
           <p 
             key={index} 

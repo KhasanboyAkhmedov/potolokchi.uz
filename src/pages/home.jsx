@@ -73,7 +73,7 @@ export function Home() {
               arrows={false}
               autoPlaySpeed={3000}
               centerMode={false}
-              className="mx-auto"
+              className="w-full mx-auto"
               containerClass=""
               dotListClass=""
               draggable={true}
