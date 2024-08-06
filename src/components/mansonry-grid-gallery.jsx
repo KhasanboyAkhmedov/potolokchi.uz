@@ -98,7 +98,7 @@ export default function TabOurwork() {
           <div key={index} className="grid gap-4">
             <div>
               <img
-                className="border-2 border-[#E9C775] h-[250px] lg:h-[350px] xl:h-[400px] max-w-full sm:w-[250px] md:max-w-full  lg:w-[300px] rounded-lg object-cover object-center"
+                className="border-2 border-[#E9C775] h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px]  max-w-full sm:w-[250px] md:max-w-full  lg:w-[300px]  2xl:w-[400px] rounded-lg object-cover object-center"
                 src={src}
                 alt="Image"
               />

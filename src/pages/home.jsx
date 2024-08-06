@@ -18,7 +18,7 @@ export function Home() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="fixed w-full bg-[#00544F] z-50">
+      <div className="fixed w-full bg-[#00544F] z-50 flex justify-center ">
         <Navbar routes={routes} />
       </div>
       <section id="home" >
@@ -73,7 +73,7 @@ export function Home() {
               arrows={false}
               autoPlaySpeed={3000}
               centerMode={false}
-              className="w-full mx-auto"
+              className="w-full mx-auto 2xl:mx-[2%]"
               containerClass=""
               dotListClass=""
               draggable={true}
@@ -166,7 +166,7 @@ export function Home() {
       </section>
     
       <section id="our-work" className="px-4 pt-4 md:pt-30 pb-12 sm:pb-48 bg-[#00544F]">
-        <div className=" mx-auto">
+        <div className=" mx-auto 2xl:mx-[2%]">
           <Typography variant="lead" className="font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-[60px] lg:text-[88px]">
             Наши работы
           </Typography>

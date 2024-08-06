@@ -17,7 +17,7 @@ const DetailsPage = () => {
   return (
     <div className='min-h-screen w-full flex flex-col bg-[#00544F]'>
 
-      <div className="fixed w-full bg-[#00544F] z-10 shadow-lg ">
+      <div className="fixed w-full bg-[#00544F] z-10 shadow-lg flex justify-center ">
         <Navbar routes={routes}/>
       </div>
       

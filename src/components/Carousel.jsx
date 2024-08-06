@@ -101,7 +101,7 @@ const Carousel = ({ images, sizes,itemName, description , productname}) => {
           </div>
           <a 
             href="tel:+998945552208"
-            className="rounded-full mt-4 px-6 sm:px-8 py-4 sm:py-5 font-siteFont font-medium"
+            className="rounded-full mt-4 px-6 sm:px-8 py-4 sm:py-5 font-siteFont font-medium whitespace-nowrap"
             style={{
               background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
               transition: 'all .3s',
