@@ -22,7 +22,7 @@ export function Home() {
         <Navbar routes={routes} />
       </div>
       <section id="home" >
-        <div className=" flex items-center justify-center max-w-8xl w-full h-[75vh] md:h-screen 2xl:h-[600px] mx-auto bg-[url('/img/bg_header1.jpg')] bg-cover bg-center">
+        <div className=" flex items-center justify-center max-w-8xl w-full h-[75vh] md:h-screen 2xl:h-[600px] 3xl:h-[800px] mx-auto bg-[url('/img/bg_header1.jpg')] bg-cover bg-center">
           <div className="flex flex-wrap items-center justify-center h-full">
             <div className="mx-auto w-full px-4 text-center">
               <p className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-siteFont font-medium text-white">

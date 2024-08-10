@@ -21,14 +21,14 @@ export function Navbar({ brandName, routes, action }) {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex text-[24px] flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-12">
+    <ul className="mb-4 mt-2 flex text-[24px]  flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-12">
       {routes.map(({ name, path, icon, main, href, target }) => (
         <Typography
           key={name}
           as="li"
           variant="paragraph"
           color="inherit"
-          className="capitalize"
+          className="capitalize 3xl:text-xl"
         >
           {main ? 
             <Link 
@@ -63,7 +63,7 @@ export function Navbar({ brandName, routes, action }) {
       <div className=" flex items-center justify-between text-white">
         <Link to="/" className="flex items-center gap-2">
           <img
-            className="h-10 md:h-12 w-auto"
+            className="h-10 md:h-12 w-auto 3xl:h-16 "
             src="/img/logo.png"
             alt="logo"
           />

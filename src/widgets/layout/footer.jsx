@@ -27,8 +27,8 @@ export function Footer() {
               src="/img/phone-call.png"
               alt="phone"
             />
-            <a href="tel:+998945552208" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
-            +998 (94) 555-22-08
+            <a href="tel:+998335552208" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
+            +998 (33) 555-22-08
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -37,8 +37,8 @@ export function Footer() {
               src="/img/phone-call.png"
               alt="phone"
             />
-            <a href="tel:+998945552204" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
-            +998 (94) 555-22-04
+            <a href="tel:+998335552204" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
+            +998 (33) 555-22-04
             </a>
           </div>
           <div className="flex items-center gap-4">
