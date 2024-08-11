@@ -59,7 +59,7 @@ const Carousel = ({product, images}) => {
           ))}
         </div>
       </div>
-      <div className="w-full mt-5 md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-8">
+      <div className="w-full mt-5 md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-6 xl:px-8">
         <h1 className='text-4xl lg:text-6xl xl:text-7xl 3xl:text-8xl  font-semibold'>{product.subname}</h1>
         <p className='text-sm lg:text-base xl:text-sm  3xl:text-xl'>{product.pdescription}</p>
         <div className='flex flex-row  justify-center sm:justify-center md:justify-normal  xsm:space-x-1  md:space-x-1 flex-wrap gap-1 '>
@@ -77,23 +77,33 @@ const Carousel = ({product, images}) => {
             </div>
           ))}
         </div>
-        <a 
-          href="tel:+998335552208"
-          className="3xl:text-xl 3xl:px-10 3xl:py-5 rounded-full mt-4 px-6 sm:px-8 py-4 sm:py-5 font-siteFont font-medium whitespace-nowrap"
-          style={{
-            background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
-            transition: 'all .3s',
-          }}
+        <div className='flex flex-row  items-center justify-evenly md:justify-between w-full flex-wrap lg:flex-nowrap'>
+          <div className='flex flex-row items-center'>
+            <p className='text-base lg:text-lg 3xl:text-xl md:mr-2 lg:mr-1 3xl:mr-4'>
+              Цвет
+            </p>
+            {product.colors.map((color, index) => (
+              <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
+            ))}
+          </div>
+          <a 
+            href="tel:+998335552208"
+            className="3xl:text-xl 3xl:px-10 3xl:py-5 mt-3 lg:mt-0 rounded-full  px-6 py-4 sm:px-8 sm:py-5 font-siteFont font-medium whitespace-nowrap"
+            style={{
+              background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
+              transition: 'all .3s',
+            }}
 
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundSize = '200% 100%';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundSize = '100% 40%';
-          }}
-          >
-            Заказать сейчас
-        </a>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundSize = '200% 100%';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundSize = '100% 40%';
+            }}
+            >
+              Заказать сейчас
+          </a>
+        </div>
       </div>
     </div>
   );
