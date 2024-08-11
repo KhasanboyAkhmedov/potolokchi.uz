@@ -229,9 +229,6 @@ export const carousel = [
         "subname": "MDF декор",
         "imageUrls": [
           "/img/led-main.jpg",
-          "/img/led-main.jpg",
-          "/img/led-main.jpg",
-          "/img/led-main.jpg",
         ],
         "topSize" : [
         ],
@@ -259,9 +256,6 @@ export const carousel = [
       {
         "subname": "LED",
         "imageUrls": [
-          "/img/led-main.jpg",
-          "/img/led-main.jpg",
-          "/img/led-main.jpg",
           "/img/led-main.jpg",
         ],
         "topSize" : [

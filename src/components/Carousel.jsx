@@ -27,20 +27,24 @@ const Carousel = ({product, images}) => {
             alt={`Slide ${selectedIndex}`}
             className="w-full h-full object-cover rounded-xl"
           />
-          <button
-            onClick={goToPrevious}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
-          >
-            
-            <ArrowLongLeftIcon className="w-6 h-6 3xl:w-8 3xl:h-8 text-[#E9C775]" />
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
-          >
+          {product.imageUrls && product.imageUrls.length > 1 
+          && <>
+            <button
+              onClick={goToPrevious}
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+            >
+              
+              <ArrowLongLeftIcon className="w-6 h-6 3xl:w-8 3xl:h-8 text-[#E9C775]" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+            >
 
-            <ArrowLongRightIcon className="w-6 h-6 3xl:w-8 3xl:h-8 text-[#E9C775]" />
-          </button>
+              <ArrowLongRightIcon className="w-6 h-6 3xl:w-8 3xl:h-8 text-[#E9C775]" />
+            </button>
+          </>  
+          }
 
         </div>
 
@@ -72,15 +76,15 @@ const Carousel = ({product, images}) => {
                 {size}
               </button>
               {product.topSize.includes(size) && 
-                <img src={topSaleProduct} className='w-12 absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 font-semibold px-1 '/>
+                <img src={topSaleProduct} className='w-10 md:w-11 lg:w-12 2xl:w-14 absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 font-semibold px-1 '/>
               }
             </div>
           ))}
         </div>
-        <div className='flex flex-row  items-center justify-evenly md:justify-between w-full flex-wrap lg:flex-nowrap'>
+        <div className='flex flex-col md:flex-row  items-center justify-evenly md:justify-between w-full flex-wrap lg:flex-nowrap'>
           <div className='flex flex-row items-center'>
             <p className='text-base lg:text-lg 3xl:text-xl md:mr-2 lg:mr-1 3xl:mr-4'>
-              Цвет
+              Цвета:
             </p>
             {product.colors.map((color, index) => (
               <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
