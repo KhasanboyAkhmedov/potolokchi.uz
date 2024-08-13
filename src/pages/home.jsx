@@ -191,6 +191,7 @@ export default Home;
 
 import React from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CustomButtonGroup({ next, previous }) {
   return (
