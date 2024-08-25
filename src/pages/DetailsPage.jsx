@@ -41,7 +41,7 @@ const DetailsPage = () => {
           ))}
         </div>
         {item.subtypes.map((product, index) => (
-          <Carousel key={index} product={product}  images={product.imageUrls} />
+          <Carousel key={index} product={product} images={product.imageUrls} productname={item.productname} />
         ))}
       </div>
 

@@ -9,6 +9,10 @@ module.exports = withMT({
       '3xl': '1800px'
     },
     extend: {
+      colors: {
+        gradientStart: '#BB824A',
+        gradientEnd: '#E9C775',
+      },
       fontFamily: {
         siteFont: ["TTHovesProTrial", "sans-serif"],
         specialFont: ["TTHovesProTrialExpandedLight", "sans-serif"]

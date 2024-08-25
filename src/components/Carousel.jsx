@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import topSaleProduct from '../../public/img/topSales.png'
 
-const Carousel = ({product, images}) => {
+const Carousel = ({product, images, productname}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);  
 
   const handleThumbnailClick = (index) => {
@@ -63,9 +63,10 @@ const Carousel = ({product, images}) => {
           ))}
         </div>
       </div>
-      <div className="w-full mt-5 md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-6 xl:px-8">
+      <div className="w-full  md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-6 xl:px-8">
         <h1 className='text-4xl lg:text-6xl xl:text-7xl 3xl:text-8xl  font-semibold'>{product.subname}</h1>
         <p className='text-sm lg:text-base xl:text-sm  3xl:text-xl'>{product.pdescription}</p>
+        {productname !== 'led' &&
         <div className='flex flex-row  justify-center sm:justify-center md:justify-normal  xsm:space-x-1  md:space-x-1 flex-wrap gap-1 '>
           {product.sizes.map((size, index) => (
             <div className='relative' key={index}>
@@ -81,7 +82,56 @@ const Carousel = ({product, images}) => {
             </div>
           ))}
         </div>
+        }
+        {product.subname == 'Led для Реечных потолков' &&
+          <>
+            <p className='text-xl bg-gradient-to-t from-[#BB824A] to-[#E9C775] bg-clip-text text-transparent'>
+              Алюминиевые Рейки лед 50mm
+            </p>
+            <div>
+              {product.colors.length > 0 && 
+                <div className='flex flex-row items-center'>
+                  <p className='text-base lg:text-lg 3xl:text-xl md:mr-2 lg:mr-1 3xl:mr-4'>
+                    Цвета:
+                  </p>
+                  {product.colors.map((color, index) => (
+                    <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
+                  ))}
+                </div>
+              }
+            </div>
+          </>
+
+        }
+        
+
+        {product.power && product.power.length > 0 && 
+          <div className='flex flex-col  sm:justify-center md:justify-normal  xsm:space-x-1  md:space-x-1 flex-wrap gap-1 '>
+            {product.subname == 'Led для Реечных потолков' &&
+              <p className='text-xl mb-5 bg-gradient-to-t from-[#BB824A] to-[#E9C775] bg-clip-text text-transparent'>
+                Размеры: 30cm, 50cm, 70cm
+              </p>
+            }
+            <p className='text-base lg:text-lg mb-4'>
+              • Мощность {product.subname == 'Led для Реечных потолков' && "(1 метр)"}
+            </p>
+            <div className='flex flex-row items-center justify-center md:justify-start gap-1 flex-wrap'>
+              {product.power.map((pow, index) => (
+                <button
+                  key={index}
+                  className={`3xl:px-6 3xl:py-2 3xl:text-2xl px-3 py-1 lg:px-6 lg:py-2 3xl:mr-2 border sm:border-2 border-gray-300 rounded-3xl`}
+                >
+                  {pow}
+                </button>
+              ))}
+            </div>
+            
+  
+          </div>
+        }
+        
         <div className='flex flex-col md:flex-row  items-center justify-evenly md:justify-between w-full flex-wrap lg:flex-nowrap'>
+          {product.colors.length > 0 && product.subname !== 'Led для Реечных потолков' &&
           <div className='flex flex-row items-center'>
             <p className='text-base lg:text-lg 3xl:text-xl md:mr-2 lg:mr-1 3xl:mr-4'>
               Цвета:
@@ -89,24 +139,26 @@ const Carousel = ({product, images}) => {
             {product.colors.map((color, index) => (
               <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
             ))}
-          </div>
-          <a 
-            href="tel:+998335552208"
-            className="3xl:text-xl 3xl:px-10 3xl:py-5 mt-3 lg:mt-0 rounded-full  px-6 py-4 sm:px-8 sm:py-5 font-siteFont font-medium whitespace-nowrap"
-            style={{
-              background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
-              transition: 'all .3s',
-            }}
+          </div>}
+          {product.subname !== 'Led для Реечных потолков' &&
+            <a 
+              href="tel:+998335552208"
+              className="3xl:text-xl 3xl:px-10 3xl:py-5 mt-3 lg:mt-0 rounded-full  px-6 py-4 sm:px-8 sm:py-5 font-siteFont font-medium whitespace-nowrap"
+              style={{
+                background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
+                transition: 'all .3s',
+              }}
 
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundSize = '200% 100%';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundSize = '100% 40%';
-            }}
-            >
-              Заказать сейчас
-          </a>
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundSize = '200% 100%';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundSize = '100% 40%';
+              }}
+              >
+                Заказать сейчас
+            </a>
+          }
         </div>
       </div>
     </div>
