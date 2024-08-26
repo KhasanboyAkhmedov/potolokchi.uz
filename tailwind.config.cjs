@@ -5,6 +5,7 @@ module.exports = withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
+      'vsm': [{ 'min': '300px','max' : '350px'}],
       'xsm': [{ 'min': '430px','max' : '640px'}],
       '3xl': '1800px'
     },

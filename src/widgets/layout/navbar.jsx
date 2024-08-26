@@ -10,6 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import LanguageSwitcher from "@/components/language-switcher";
+import LanguageToggler from "@/components/language-switcher";
 
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
@@ -60,18 +61,18 @@ export function Navbar({ brandName, routes, action }) {
   );
 
   return (
-    <MTNavbar color="transparent" className=" 2xl:max-w-full mx-auto 2xl:mx-[2%] ">
+    <MTNavbar color="transparent" className=" w-full 2xl:max-w-full mx-auto 2xl:mx-[2%] ">
       <div className=" flex items-center justify-between text-white">
         <Link to="/" className="flex items-center gap-2">
           <img
-            className="h-8 xsm:h-10 sm:h-10 md:h-12 w-auto 3xl:h-16 "
+            className="h-8 vsm:h-6 xsm:h-10 sm:h-10 md:h-12 w-auto 3xl:h-16 "
             src="/img/logo.png"
             alt="logo"
           />
         </Link>
         <div className="hidden lg:block">{navList}</div>
-        <div>
-          <LanguageSwitcher/>
+        <div className="flex items-center">
+          <LanguageToggler/>
           <IconButton
             variant="text"
             size="sm"
