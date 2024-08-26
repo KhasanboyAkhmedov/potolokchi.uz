@@ -9,6 +9,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import LanguageSwitcher from "@/components/language-switcher";
 
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
@@ -63,25 +64,28 @@ export function Navbar({ brandName, routes, action }) {
       <div className=" flex items-center justify-between text-white">
         <Link to="/" className="flex items-center gap-2">
           <img
-            className="h-10 md:h-12 w-auto 3xl:h-16 "
+            className="h-8 xsm:h-10 sm:h-10 md:h-12 w-auto 3xl:h-16 "
             src="/img/logo.png"
             alt="logo"
           />
         </Link>
         <div className="hidden lg:block">{navList}</div>
-        <IconButton
-          variant="text"
-          size="sm"
-          color="white"
-          className="ml-auto text-inherit  hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ? (
-            <XMarkIcon strokeWidth={2} className="h-6 w-6" />
-          ) : (
-            <Bars3Icon strokeWidth={2} className="h-6 w-6" />
-          )}
-        </IconButton>
+        <div>
+          <LanguageSwitcher/>
+          <IconButton
+            variant="text"
+            size="sm"
+            color="white"
+            className="ml-auto text-inherit  hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ? (
+              <XMarkIcon strokeWidth={2} className="h-6 w-6" />
+            ) : (
+              <Bars3Icon strokeWidth={2} className="h-6 w-6" />
+            )}
+          </IconButton>
+        </div>
       </div>
       <MobileNav
         className={`${ openNav && 'my-2'} rounded-xl  bg-white px-4  text-blue-gray-900`}

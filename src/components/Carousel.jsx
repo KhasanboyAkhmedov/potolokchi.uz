@@ -140,25 +140,25 @@ const Carousel = ({product, images, productname}) => {
               <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
             ))}
           </div>}
-          {product.subname !== 'Led для Реечных потолков' &&
-            <a 
-              href="tel:+998335552208"
-              className="3xl:text-xl 3xl:px-10 3xl:py-5 mt-3 lg:mt-0 rounded-full  px-6 py-4 sm:px-8 sm:py-5 font-siteFont font-medium whitespace-nowrap"
-              style={{
-                background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
-                transition: 'all .3s',
-              }}
+          
+          <a 
+            href="tel:+998335552208"
+            className="3xl:text-xl 3xl:px-10 3xl:py-5 mt-3 lg:mt-0 rounded-full  px-6 py-4 sm:px-8 sm:py-5 font-siteFont font-medium whitespace-nowrap"
+            style={{
+              background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
+              transition: 'all .3s',
+            }}
 
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundSize = '200% 100%';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundSize = '100% 40%';
-              }}
-              >
-                Заказать сейчас
-            </a>
-          }
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundSize = '200% 100%';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundSize = '100% 40%';
+            }}
+            >
+              Заказать сейчас
+          </a>
+          
         </div>
       </div>
     </div>
