@@ -1,0 +1,183 @@
+import {
+    Button,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
+    Input,
+    Textarea,
+    Typography,
+} from "@material-tailwind/react";
+import axios from "axios";
+import { useState } from "react";
+
+const Modal = ({open , handleOpen}) => {
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [name, setName] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [errors, setErrors] = useState('');
+    
+    const validateInputs = () => {
+        let valid = true;
+        const errors = { name: '', phoneNumber: '' };
+    
+        if (!name.trim()) {
+          errors.name = 'Имя обязательно.';
+          valid = false;
+        }
+    
+        const phoneRegex = /^\+?\d{9,15}$/;
+        if (!phoneNumber.trim()) {
+          errors.phoneNumber = 'Номер телефона обязателен.';
+          valid = false;
+        } else if (!phoneRegex.test(phoneNumber)) {
+          errors.phoneNumber = 'Неверный формат номера телефона.';
+          valid = false;
+        }
+    
+        setErrors(errors);
+        return valid;
+    };
+
+    const sendTelegramMessage = async () => {
+        if (!validateInputs()) return;
+
+        setIsLoading(true);
+        const chatId = import.meta.env.VITE_CHAT_ID ;
+        const botToken = import.meta.env.VITE_TOKEN;
+        const url = `${import.meta.env.VITE_BASE_URL}${botToken}/sendMessage`;
+        
+        try {
+          const response = await axios.post(url, {
+            chat_id: chatId,
+            text: `Исми: ${name}\nРаками: ${phoneNumber}`,
+          });
+    
+        } catch (error) {            
+          console.log(error);
+          
+        } finally{
+            setName('');
+            setPhoneNumber('');
+            setIsLoading(false);
+            handleOpen();
+        }
+      };
+    return (
+     <>
+        <Dialog className="bg-[#00544F] " open={open} size="md" handler={handleOpen}>
+          <div className="flex items-center justify-end mt-3 text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="mr-3 h-5 w-5"
+              onClick={handleOpen}
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <DialogBody>
+            <Typography className="font-siteFont mb-4 text-lg sm:text-2xl 3xl:text-4xl text-center flex-wrap font-bold bg-gradient-to-tr from-[#E9C775] via-[#D9AF66] to-[#BB824A] bg-clip-text text-transparent" variant="h4">
+                Оставьте свои данные,<br/> чтобы мы с вами связались.
+            </Typography>
+            
+            <div className="flex flex-col mb-2 3xl:mb-6 justify-center items-center">
+                <label className="font-siteFont text-sm sm:text-base 3xl:text-2xl tracking-wider text-white mb-2 text-center">Имя:</label>
+                <input className="px-8 py-4 rounded-3xl focus:outline-none text-black text-sm sm:text-base 3xl:text-2xl w-[90%] 3xl:w-[80%]" 
+                type="text" 
+                placeholder="Дима"
+                value={name}
+                required
+                onChange={(e) => setName(e.target.value)}/>
+                {errors.name && 
+                    <Typography
+                    variant="small"
+                    color="red"
+                    className="ml-4 mt-2 flex items-center gap-1 font-normal"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="-mt-px h-4 w-4"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {errors.name}
+                  </Typography>
+                }    
+            </div>
+            <div className="flex flex-col justify-center items-center">
+                <label className="font-siteFont text-sm sm:text-base  3xl:text-2xl tracking-wider text-white mb-2 text-center">Номер телефона:</label>
+                <input className="px-8 py-4 rounded-3xl focus:outline-none text-black text-sm sm:text-base 3xl:text-2xl w-[90%] 3xl:w-[80%]" 
+                type="text" 
+                placeholder="+998 91 234 56 78"
+                value={phoneNumber}
+                required
+                onChange={(e) => setPhoneNumber(e.target.value)}/>
+                {errors.phoneNumber && 
+                    <Typography
+                    variant="small"
+                    color="red"
+                    className="ml-4 mt-2 flex items-center gap-1 font-normal"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="-mt-px h-4 w-4"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {errors.phoneNumber}
+                  </Typography>
+                }
+            </div>
+          </DialogBody>
+          <DialogFooter className="space-x-2 items-center flex flex-col-reverse sm:flex-row">
+            <Button 
+            className="3xl:text-xl"
+            variant="text" color="white" onClick={handleOpen}>
+              Отмена
+            </Button>
+        
+            <button 
+            disabled={isLoading}
+            className="w-[250px]  3xl:text-xl text-white rounded-full px-6 sm:px-12 py-4 sm:py-5 font-siteFont font-medium"
+                style={{
+                  background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
+                  transition: 'all .3s',
+                }}
+
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundSize = '200% 100%';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundSize = '100% 40%';
+                }}
+                onClick={sendTelegramMessage}>
+                {isLoading ? <div
+                    className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status">
+                  </div> : 'Отправить'}
+            </button>
+          </DialogFooter>
+        </Dialog>
+      </>
+    );
+}
+
+export default Modal

@@ -59,7 +59,7 @@ export function Home() {
         <div className=" mx-auto ">
           <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
             {[0, 1,2].map((_, index) => (
-              <div className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
+              <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
                <img src={`/img/feature_card_${index + 1}.png`} />
               </div>
             ))}
@@ -189,9 +189,7 @@ export function Home() {
 export default Home;
 
 
-import React from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CustomButtonGroup({ next, previous }) {
   return (

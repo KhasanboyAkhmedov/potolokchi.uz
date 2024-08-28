@@ -1,9 +1,13 @@
-import PropTypes from "prop-types";
+
+import Modal from "@/components/modal";
 import { Button } from "@material-tailwind/react";
+import { useState } from "react";
 
 const year = new Date().getFullYear();
 
 export function Footer() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open);
   return (
     <footer className=" font-siteFont flex justify-center">
       <div className="relative h-full w-full bg-[url('/img/bg_footer.jpg')] bg-cover bg-center flex justify-center md:justify-end  items-center py-10  ">
@@ -92,28 +96,18 @@ export function Footer() {
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundSize = '100% 40%';
               }}
+              onClick={handleOpen}
               >
-                <a href="tel:+998945552208">
                 Перезвоните мне
-                </a>
             </Button>
           </div>
         </div>
       </div>
+      <Modal open={open} handleOpen={handleOpen}/>
     </footer>
   );
 }
 
 
-
-Footer.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  socials: PropTypes.arrayOf(PropTypes.object),
-  menus: PropTypes.arrayOf(PropTypes.object),
-  copyright: PropTypes.node,
-};
-
-Footer.displayName = "/src/widgets/layout/footer.jsx";
 
 export default Footer;
