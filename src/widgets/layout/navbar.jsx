@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Navbar as MTNavbar,
   MobileNav,
@@ -9,13 +8,12 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import LanguageSwitcher from "@/components/language-switcher";
 import LanguageToggler from "@/components/language-switcher";
 
-export function Navbar({ brandName, routes, action }) {
-  const [openNav, setOpenNav] = React.useState(false);
+export function Navbar({ routes }) {
+  const [openNav, setOpenNav] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
@@ -61,7 +59,7 @@ export function Navbar({ brandName, routes, action }) {
   );
 
   return (
-    <MTNavbar color="transparent" className=" w-full 2xl:max-w-full mx-auto 2xl:mx-[2%] ">
+    <MTNavbar color="transparent" className="w-full 2xl:max-w-full mx-auto 2xl:mx-[2%]">
       <div className=" flex items-center justify-between text-white">
         <Link to="/" className="flex items-center gap-2">
           <img
@@ -100,26 +98,5 @@ export function Navbar({ brandName, routes, action }) {
   );
 }
 
-Navbar.defaultProps = {
-  brandName: "Potolokchi.uz",
-  action: (
-    <a
-      href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-      target="_blank"
-    >
-      <Button variant="gradient" size="sm" fullWidth>
-        free download
-      </Button>
-    </a>
-  ),
-};
-
-Navbar.propTypes = {
-  brandName: PropTypes.string,
-  routes: PropTypes.arrayOf(PropTypes.object).isRequired,
-  action: PropTypes.node,
-};
-
-Navbar.displayName = "/src/widgets/layout/navbar.jsx";
 
 export default Navbar;

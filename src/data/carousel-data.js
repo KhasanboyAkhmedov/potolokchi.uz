@@ -95,10 +95,6 @@ export const carousel = [
           "/img/rechniy/1.jpg",
           "/img/rechniy/3.jpg",
           "/img/rechniy/4.jpg",
-          // "/img/rechniy_main.jpg",
-          // "/img/rechniy/IMG_2.JPG",
-          // "/img/rechniy/IMG_4.JPG",
-          // "/img/rechniy/IMG_9.JPG",
         ],
         "topSize" : [
           "50x57",
@@ -127,7 +123,7 @@ export const carousel = [
   {
     "name" : "Армстронг",
     "productname": "armstrong",
-    "imageUrl": "/img/armstrong_main.png",
+    "imageUrl": "/img/armstrong_main.jpg",
     "subtypes" : [
       {
         "subname": "Армстронг Кассетный",
@@ -218,7 +214,9 @@ export const carousel = [
       {
         "subname": "Led для потолка Армстронг",
         "imageUrls": [
-          "/img/led-main.jpg",
+          "/img/led_armstrong/led_armstrong1.png",
+          "/img/led_armstrong/led_armstrong2.png",
+          "/img/led_armstrong/led_armstrong3.png",
         ],
         "topSize" : [
         ],
@@ -256,7 +254,7 @@ export const carousel = [
       {
         "subname": "Led для Реечных потолков",
         "imageUrls": [
-          "/img/led-main.jpg",
+          "/img/led_rechniy.png",
         ],
         "topSize" : [
         ],
