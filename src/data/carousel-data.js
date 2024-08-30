@@ -247,14 +247,17 @@ export const carousel = [
         "colors" : [
         ],
         "power": [
-          "10W",
+          "12W",
         ],
         "pdescription" :  "LED-панели для потолков Грильято — это современное решение, обеспечивающее равномерное освещение и стильный вид. Они легко монтируются, экономичны и добавляют световой акцент, который подчеркивает уникальную структуру потолка. Идеальны для офисных и коммерческих пространств, создавая комфортную и продуктивную атмосферу."
       },
       {
         "subname": "Led для Реечных потолков",
         "imageUrls": [
-          "/img/led_rechniy.png",
+          "/img/led_rechniy/led_rechniy.png",
+          "/img/led_rechniy/led_rechniy1.jpg",
+          "/img/led_rechniy/led_rechniy2.jpg",
+          "/img/led_rechniy/led_rechniy3.jpg",
         ],
         "topSize" : [
         ],
