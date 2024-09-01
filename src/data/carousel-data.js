@@ -128,9 +128,9 @@ export const carousel = [
       {
         "subname": "Армстронг Кассетный",
         "imageUrls": [
-          "/img/armstrong_main.png",
-          "/img/armstrong/IMG_1.JPG",
-          "/img/armstrong/IMG_2.JPG",
+          "/img/armstrong/armstrong_kassetniy1.jpg",
+          "/img/armstrong/armstrong_kassetniy2.jpg",
+          "/img/armstrong/armstrong_kassetniy3.jpg",
         ],
         "topSize" : [
           
@@ -149,9 +149,9 @@ export const carousel = [
       {
         "subname": "Армстронг из минерального волокна",
         "imageUrls": [
-          "/img/armstrong_main.png",
-          "/img/armstrong/IMG_1.JPG",
-          "/img/armstrong/IMG_2.JPG",
+          "/img/armstrong/armstrong_volokna1.jpg",
+          "/img/armstrong/armstrong_volokna2.jpg",
+          "/img/armstrong/armstrong_volokna3.png",
         ],
         "topSize" : [
           
@@ -170,9 +170,7 @@ export const carousel = [
       {
         "subname": "Армстронг из фольги",
         "imageUrls": [
-          "/img/armstrong_main.png",
-          "/img/armstrong/IMG_1.JPG",
-          "/img/armstrong/IMG_2.JPG",
+          "/img/armstrong/armstrong_folga1.jpg",
         ],
         "topSize" : [
           
@@ -188,9 +186,9 @@ export const carousel = [
       {
         "subname": "Армстронг из гипса",
         "imageUrls": [
-          "/img/armstrong_main.png",
-          "/img/armstrong/IMG_1.JPG",
-          "/img/armstrong/IMG_2.JPG",
+          "/img/armstrong/armstrong_gips1.png",
+          "/img/armstrong/armstrong_gips2.jpg",
+          "/img/armstrong/armstrong_gips3.webp",
         ],
         "topSize" : [
           
