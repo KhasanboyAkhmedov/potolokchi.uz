@@ -63,6 +63,7 @@ const Modal = ({open , handleOpen}) => {
             handleOpen();
         }
       };
+
     return (
      <>
         <Dialog className="bg-[#00544F] " open={open} size="md" handler={handleOpen}>
@@ -168,7 +169,8 @@ const Modal = ({open , handleOpen}) => {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundSize = '100% 40%';
                 }}
-                onClick={sendTelegramMessage}>
+                onClick={sendTelegramMessage}
+                >
                 {isLoading ? <div
                     className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status">

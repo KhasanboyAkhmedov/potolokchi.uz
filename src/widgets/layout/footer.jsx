@@ -58,19 +58,10 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <img
             className="h-6 w-auto"
-              src="/img/facebook.png"
-              alt="facebook"
-            />
-            <a href="/" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">Facebook</a>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <img
-            className="h-6 w-auto"
               src="/img/telegram.png"
               alt="telegram"
             />
-            <a href="/" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
+            <a href="https://t.me/potolokchiuz" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
               Telegram
             </a>
           </div>
