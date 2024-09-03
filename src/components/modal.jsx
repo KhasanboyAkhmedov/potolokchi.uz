@@ -7,6 +7,7 @@ import {
     Input,
     Textarea,
     Typography,
+    Alert,
 } from "@material-tailwind/react";
 import axios from "axios";
 import { useState } from "react";
@@ -66,8 +67,8 @@ const Modal = ({open , handleOpen}) => {
 
             setTimeout(() => {
               handleOpen();
-            }, 3000)
-            setResponseMessage(null)
+              setResponseMessage(null)
+            }, 2000)
         }
       };
 
@@ -93,7 +94,37 @@ const Modal = ({open , handleOpen}) => {
             <Typography className="font-siteFont mb-4 text-lg sm:text-2xl 3xl:text-4xl text-center flex-wrap font-bold bg-gradient-to-tr from-[#E9C775] via-[#D9AF66] to-[#BB824A] bg-clip-text text-transparent" variant="h4">
                 Оставьте свои данные,<br/> чтобы мы с вами связались.
             </Typography>
-            
+            {responseMessage !== null && responseMessage.type && 
+            <Alert
+              icon={responseMessage.type === 'success' ? <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clipRule="evenodd"
+                />
+              </svg> : <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              }
+              className={`rounded-none border-l-4 ${responseMessage.type === 'success' ? "border-[#2ec946] text-[#2ec946] bg-[#2ec946]/10" : "border-[#c92e2e] text-[#c92e2e] bg-[#4e3838]"}   font-medium  mb-2`}
+            >
+              {responseMessage.text}
+            </Alert>
+            }
             <div className="flex flex-col mb-2 3xl:mb-6 justify-center items-center">
                 <label className="font-siteFont text-sm sm:text-base 3xl:text-2xl tracking-wider text-white mb-2 text-center">Имя:</label>
                 <input className="px-8 py-4 rounded-3xl focus:outline-none text-black text-sm sm:text-base 3xl:text-2xl w-[90%] 3xl:w-[80%]" 
@@ -154,6 +185,8 @@ const Modal = ({open , handleOpen}) => {
                   </Typography>
                 }
             </div>
+            
+            
           </DialogBody>
           <DialogFooter className="space-x-2 items-center flex flex-col-reverse sm:flex-row">
             <Button 
@@ -179,12 +212,14 @@ const Modal = ({open , handleOpen}) => {
                 }}
                 onClick={sendTelegramMessage}
                 >
+                
                 {isLoading ? <div
                     className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status">
-                  </div> : (responseMessage !== null && responseMessage.type ? (
+                  </div> : 'Отправить'}
+                  {/* : (responseMessage !== null && responseMessage.type ? (
                     `${responseMessage.text}`
-                      ) : 'Отправить')}
+                      )  */}
             </button>
           </DialogFooter>
         </Dialog>
