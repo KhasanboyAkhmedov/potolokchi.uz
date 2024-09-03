@@ -16,7 +16,8 @@ const Modal = ({open , handleOpen}) => {
     const [name, setName] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState('');
-    
+    const [responseMessage, setResponseMessage] = useState(null);
+
     const validateInputs = () => {
         let valid = true;
         const errors = { name: '', phoneNumber: '' };
@@ -52,15 +53,21 @@ const Modal = ({open , handleOpen}) => {
             chat_id: chatId,
             text: `Исми: ${name}\nРаками: ${phoneNumber}`,
           });
-    
-        } catch (error) {            
+          setResponseMessage({ type: 'success', text: 'Сообщение успешно отправлено!' });
+
+        } catch (error) {   
+          setResponseMessage({ type: 'error', text: 'Ошибка при отправке сообщения.' }); 
           console.log(error);
           
         } finally{
             setName('');
             setPhoneNumber('');
             setIsLoading(false);
-            handleOpen();
+
+            setTimeout(() => {
+              handleOpen();
+            }, 3000)
+            setResponseMessage(null)
         }
       };
 
@@ -155,9 +162,10 @@ const Modal = ({open , handleOpen}) => {
               Отмена
             </Button>
         
+            
             <button 
             disabled={isLoading}
-            className="w-[250px]  3xl:text-xl text-white rounded-full px-6 sm:px-12 py-4 sm:py-5 font-siteFont font-medium"
+            className={`flex items-center justify-center 3xl:text-xl  text-white rounded-full px-6 sm:px-12 py-4 sm:py-5 font-siteFont font-medium`}
                 style={{
                   background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
                   transition: 'all .3s',
@@ -174,7 +182,9 @@ const Modal = ({open , handleOpen}) => {
                 {isLoading ? <div
                     className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status">
-                  </div> : 'Отправить'}
+                  </div> : (responseMessage ? (
+                    `${responseMessage.text}`
+                      ) : 'Отправить')}
             </button>
           </DialogFooter>
         </Dialog>
