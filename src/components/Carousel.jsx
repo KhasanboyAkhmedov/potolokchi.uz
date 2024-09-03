@@ -142,7 +142,7 @@ const Carousel = ({product, images, productname}) => {
           </div>}
           
           <a 
-            href="tel:+998335552208"
+            href="tel:+998335552204"
             className="3xl:text-xl 3xl:px-10 3xl:py-5 mt-3 lg:mt-0 rounded-full  px-6 py-4 sm:px-8 sm:py-5 font-siteFont font-medium whitespace-nowrap"
             style={{
               background: 'linear-gradient(90deg, #E9C775 0%, #BB824A 50%, #E9C775 100%)',
