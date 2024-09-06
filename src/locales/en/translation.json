@@ -1,0 +1,17 @@
+{
+    "navbar" : {
+        "home": "Home",
+        "products": "Products",
+        "work": "Our Work",
+        "contact": "Contact Us"
+    },
+    "hero_section" : {
+        "new_level": "New level ceilings",
+        "we_style" : "We turn your ideas into reality, creating comfort and style!",
+        "contact_us" : "Contact us"
+    },
+    "main" : {
+        "our_products" : "Our products"
+    }
+
+}   

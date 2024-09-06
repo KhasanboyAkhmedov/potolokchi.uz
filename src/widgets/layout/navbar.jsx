@@ -4,7 +4,6 @@ import {
   Navbar as MTNavbar,
   MobileNav,
   Typography,
-  Button,
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -13,6 +12,8 @@ import LanguageToggler from "@/components/language-switcher";
 export function Navbar({ routes }) {
   const [openNav, setOpenNav] = useState(false);
 
+  console.log(" Routes",routes);
+  
   useEffect(() => {
     window.addEventListener(
       "resize",

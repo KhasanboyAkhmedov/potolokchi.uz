@@ -10,12 +10,14 @@ import 'react-multi-carousel/lib/styles.css';
 import { Footer, Navbar } from "@/widgets/layout";
 import MasonryGridGallery from "@/components/mansonry-grid-gallery";
 import { useNavigate } from "react-router-dom";
-import routes from "@/routes";
+import { useRoutes } from "@/routes";
 import carousel from "@/data/carousel-data";
 
 
 export function Home() {
   const navigate = useNavigate();
+  const routes = useRoutes();
+  const {t} = useTranslation();
   return (
     <>
       <div className="fixed w-full bg-[#00544F] z-50 flex justify-center ">
@@ -26,10 +28,12 @@ export function Home() {
           <div className="flex flex-wrap items-center justify-center h-full">
             <div className="mx-auto w-full px-4 text-center">
               <p className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-siteFont font-medium text-white">
-                Потолки нового уровня
+                {/* Потолки нового уровня */}
+                {t('hero_section.new_level')}
               </p>
               <p className="text-white text-base sm:text-lg lg:text-xl opacity-80 font-siteFont font-medium">
-                Мы воплощаем ваши идеи в реальность, создавая уют и стиль!
+                {/* Мы воплощаем ваши идеи в реальность, создавая уют и стиль! */}
+                {t("hero_section.we_style")}
               </p>
               <Button onClick={(e) => {
                 e.preventDefault();
@@ -49,7 +53,7 @@ export function Home() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundSize = '100% 40%';
                 }}>
-                Связаться с нами
+                {t('hero_section.contact_us')}
               </Button>
             </div>
           </div>
@@ -66,7 +70,7 @@ export function Home() {
           </div>
           <div className="w-full mt-12 sm:mt-28 flex flex-wrap items-center ">
             <Typography variant="lead" className="w-full  font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-6xl  xl:text-8xl">
-              Наши продукты
+              {t('main.our_products')}
             </Typography>
             <Carousel
               additionalTransfrom={0}
@@ -190,6 +194,7 @@ export default Home;
 
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
 
 function CustomButtonGroup({ next, previous }) {
   return (

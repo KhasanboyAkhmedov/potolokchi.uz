@@ -1,25 +1,58 @@
-export const routes = [
+import { useTranslation } from 'react-i18next';
+
+export const routes = () => {
+  const { t } = useTranslation();
+
+  return [
     {
-      name: "Главная",
+      name: t("navbar.home"),
       path: "/#home",
-      main: '/'
+      main: '/',
       // element: <Home />,
     },
     {
-      name: "Продукты",
+      name: t("navbar.products"),
       path: "/#our-products",
-      main: '/'
+      main: '/',
     },
     {
-      name: "Наши работы",
+      name: t("navbar.work"),
       path: "/#our-work",
-      main: '/'
+      main: '/',
     },
     {
-      name: "Контакты",
+      name: t("navbar.contact"),
       path: "/#contact-us",
-      main: '/'
+      main: '/',
     },
   ];
+};
+
+export default routes;
+
+
+// export const routes = [
+//     {
+//       name: "Главная",
+//       path: "/#home",
+//       main: '/'
+//       // element: <Home />,
+//     },
+//     {
+//       name: "Продукты",
+//       path: "/#our-products",
+//       main: '/'
+//     },
+//     {
+//       name: "Наши работы",
+//       path: "/#our-work",
+//       main: '/'
+//     },
+//     {
+//       name: "Контакты",
+//       path: "/#contact-us",
+//       main: '/'
+//     },
+//   ];
   
-  export default routes;
+//   export default routes;

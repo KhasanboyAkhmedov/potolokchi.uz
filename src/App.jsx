@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate} from "react-router-dom";
-import routes from "@/routes";
+import routes, { useRoutes } from "@/routes";
 import { Home } from "./pages";
 import DetailsPage from "./pages/DetailsPage";
 
 
 function App() {
-
+  const routes = useRoutes();
   return (
     <>
       <Routes>

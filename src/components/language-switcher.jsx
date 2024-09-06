@@ -1,24 +1,34 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
 const LanguageToggler = () => {
+  const { i18n } = useTranslation();
   const [language, setLanguage] = useState('Русский')
   const [isOpen, setIsOpen] = useState(false);
 
   const options = [
-    {label: "Русский" },
-    {label: "English"},
-    {label: "Uzbek"},
-  ]
+    { label: "Русский", value: "ru" },
+    { label: "English", value: "en" },
+    { label: "Uzbek", value: "uz" },
+  ];
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
 
   const handleLanguageChange = (event) => {
-    setLanguage(event.target.value);
-    setIsOpen(false)
+    const selectedLanguage = options.find(opt => opt.label === event.target.value);
+    setLanguage(selectedLanguage.label);
+    i18n.changeLanguage(selectedLanguage.value);
+    setIsOpen(false);
   };
+
+
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  // };
+
   return (
     <div className="relative">
       <div>
@@ -37,7 +47,13 @@ const LanguageToggler = () => {
         <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {options.map(opt => (
-              <button onClick={handleLanguageChange} value={opt.label} key={opt.value} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">{opt.label}</button>
+              <button 
+                onClick={handleLanguageChange} 
+                value={opt.label} 
+                key={opt.value} 
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
+                  {opt.label}
+              </button>
             ))}
           </div>
         </div>
