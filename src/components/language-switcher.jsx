@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
@@ -8,7 +8,7 @@ const LanguageToggler = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const options = [
-    { label: "Русский", value: "ru" },
+    { label: "Русский", value: "ru-RU" },
     { label: "English", value: "en" },
     { label: "Узбек", value: "uz" },
   ];
