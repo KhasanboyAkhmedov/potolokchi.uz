@@ -1,9 +1,9 @@
 import {
   Card,
   CardBody,
-  CardHeader,
   Typography,
-  Button
+  Button,
+  CardHeader
 } from "@material-tailwind/react";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -12,17 +12,14 @@ import MasonryGridGallery from "@/components/mansonry-grid-gallery";
 import { useNavigate } from "react-router-dom";
 import { useRoutes } from "@/routes";
 import  { useCarousel } from "@/data/carousel-data";
-
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
 
 export function Home() {
+  const {t} = useTranslation();
   const navigate = useNavigate();
   const routes = useRoutes();
-  const {t} = useTranslation();
   const carousel = useCarousel();
-  const cardData = useCardData();
-  console.log(cardData);
-  
-  console.log(carousel);
   
   return (
     <>
@@ -66,18 +63,11 @@ export function Home() {
       <section id="our-products" className=" px-4 pb-20 pt-4 bg-[#00544F]">
         <div className=" mx-auto ">
           <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
-            {/* {[0, 1,2].map((_, index) => (
+            {[0, 1,2].map((_, index) => (
               <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
                <img src={`/img/feature_card_${index + 1}.png`} />
               </div>
-            ))} */}
-            {cardData.map((item, index) => (
-              <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
-                <HeaderCard title={item.name}/>
-               {/* <img src={`/img/feature_card_${index + 1}.png`} /> */}
-              </div>
             ))}
-            
           </div>
           <div className="w-full mt-12 sm:mt-28 flex flex-wrap items-center ">
             <Typography variant="lead" className="w-full  font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-6xl  xl:text-8xl">
@@ -204,10 +194,7 @@ export function Home() {
 export default Home;
 
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { useTranslation } from "react-i18next";
-import HeaderCard from "@/components/header-card";
-import useCardData from "@/data/card-data";
+
 
 function CustomButtonGroup({ next, previous }) {
   return (
