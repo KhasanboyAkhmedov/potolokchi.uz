@@ -1,39 +1,39 @@
 import {
     Button,
     Dialog,
-    DialogHeader,
     DialogBody,
     DialogFooter,
-    Input,
-    Textarea,
     Typography,
     Alert,
 } from "@material-tailwind/react";
 import axios from "axios";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Modal = ({open , handleOpen}) => {
+    const {t} = useTranslation();
     const [phoneNumber, setPhoneNumber] = useState('');
     const [name, setName] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [errors, setErrors] = useState('');
+    const [errors, setErrors] = useState({ name: '', phoneNumber: '' });
     const [responseMessage, setResponseMessage] = useState(null);
 
+    
     const validateInputs = () => {
         let valid = true;
         const errors = { name: '', phoneNumber: '' };
     
         if (!name.trim()) {
-          errors.name = 'Имя обязательно.';
+          errors.name = t("modal.name_required");
           valid = false;
         }
     
         const phoneRegex = /^\+?\d{9,15}$/;
         if (!phoneNumber.trim()) {
-          errors.phoneNumber = 'Номер телефона обязателен.';
+          errors.phoneNumber = t("modal.number_required");
           valid = false;
         } else if (!phoneRegex.test(phoneNumber)) {
-          errors.phoneNumber = 'Неверный формат номера телефона.';
+          errors.phoneNumber = t("modal.number_wrong_format");
           valid = false;
         }
     
@@ -54,10 +54,10 @@ const Modal = ({open , handleOpen}) => {
             chat_id: chatId,
             text: `Исми: ${name}\nРаками: ${phoneNumber}`,
           });
-          setResponseMessage({ type: 'success', text: 'Сообщение успешно отправлено!' });
+          setResponseMessage({ type: 'success', text: t("modal.message_send_successfully") });
 
         } catch (error) {   
-          setResponseMessage({ type: 'error', text: 'Ошибка при отправке сообщения.' }); 
+          setResponseMessage({ type: 'error', text: t("modal.message_send_error") }); 
           console.log(error);
           
         } finally{
@@ -71,6 +71,12 @@ const Modal = ({open , handleOpen}) => {
             }, 2000)
         }
       };
+
+    const clearErrorsAndClose = () => {
+      setErrors({ name: '', phoneNumber: '' });
+      handleOpen();
+    };
+    
 
     return (
      <>
@@ -92,7 +98,7 @@ const Modal = ({open , handleOpen}) => {
           </div>
           <DialogBody>
             <Typography className="font-siteFont mb-4 text-lg sm:text-2xl 3xl:text-4xl text-center flex-wrap font-bold bg-gradient-to-tr from-[#E9C775] via-[#D9AF66] to-[#BB824A] bg-clip-text text-transparent" variant="h4">
-                Оставьте свои данные,<br/> чтобы мы с вами связались.
+                {t("modal.leave_data")}<br/> {t("modal.we_call")}
             </Typography>
             {responseMessage !== null && responseMessage.type && 
             <Alert
@@ -126,7 +132,7 @@ const Modal = ({open , handleOpen}) => {
             </Alert>
             }
             <div className="flex flex-col mb-2 3xl:mb-6 justify-center items-center">
-                <label className="font-siteFont text-sm sm:text-base 3xl:text-2xl tracking-wider text-white mb-2 text-center">Имя:</label>
+                <label className="font-siteFont text-sm sm:text-base 3xl:text-2xl tracking-wider text-white mb-2 text-center">{t("modal.name")}</label>
                 <input className="px-8 py-4 rounded-3xl focus:outline-none text-black text-sm sm:text-base 3xl:text-2xl w-[90%] 3xl:w-[80%]" 
                 type="text" 
                 placeholder="Дима"
@@ -156,7 +162,7 @@ const Modal = ({open , handleOpen}) => {
                 }    
             </div>
             <div className="flex flex-col justify-center items-center">
-                <label className="font-siteFont text-sm sm:text-base  3xl:text-2xl tracking-wider text-white mb-2 text-center">Номер телефона:</label>
+                <label className="font-siteFont text-sm sm:text-base  3xl:text-2xl tracking-wider text-white mb-2 text-center">{t("modal.phone_number")}</label>
                 <input className="px-8 py-4 rounded-3xl focus:outline-none text-black text-sm sm:text-base 3xl:text-2xl w-[90%] 3xl:w-[80%]" 
                 type="text" 
                 placeholder="+998 91 234 56 78"
@@ -191,8 +197,8 @@ const Modal = ({open , handleOpen}) => {
           <DialogFooter className="space-x-2 items-center flex flex-col-reverse sm:flex-row">
             <Button 
             className="3xl:text-xl"
-            variant="text" color="white" onClick={handleOpen}>
-              Отмена
+            variant="text" color="white" onClick={clearErrorsAndClose}>
+              {t("modal.cancel")}
             </Button>
         
             
@@ -216,7 +222,7 @@ const Modal = ({open , handleOpen}) => {
                 {isLoading ? <div
                     className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status">
-                  </div> : 'Отправить'}
+                  </div> : t("modal.send")}
             </button>
           </DialogFooter>
         </Dialog>

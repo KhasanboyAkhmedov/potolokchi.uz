@@ -19,6 +19,19 @@
         "call_me": "Call me back",
         "location": "Dzharkurganskaya street, 20/3, Tashkent"
     },
+    "modal": {
+        "leave_data": "Leave your details",
+        "we_call": "for us to contact you.",
+        "name": "Name:",
+        "phone_number": "Phone Number:",
+        "name_required": "Name is required.",
+        "number_required": "Phone is required.",
+        "number_wrong_format": "Wrong phone number format.",
+        "message_send_successfully": "Message send successfully!",
+        "message_send_error": "Error sending message.",
+        "send": "Send",
+        "cancel": "Cancel"
+    },
     "carousel_info" : {
         "grilyato": "Grilyato",
         "grilyato_description": "Grilyato ceilings are unique with their lattice structure, which provides modern style, excellent ventilation and ease of installation.",
