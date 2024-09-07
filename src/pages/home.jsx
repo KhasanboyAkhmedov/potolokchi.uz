@@ -11,13 +11,16 @@ import { Footer, Navbar } from "@/widgets/layout";
 import MasonryGridGallery from "@/components/mansonry-grid-gallery";
 import { useNavigate } from "react-router-dom";
 import { useRoutes } from "@/routes";
-import carousel from "@/data/carousel-data";
+import  { useCarousel } from "@/data/carousel-data";
 
 
 export function Home() {
   const navigate = useNavigate();
   const routes = useRoutes();
   const {t} = useTranslation();
+  const carousel = useCarousel();
+  console.log(carousel);
+  
   return (
     <>
       <div className="fixed w-full bg-[#00544F] z-50 flex justify-center ">
@@ -159,7 +162,7 @@ export function Home() {
                       }}
                       onClick={() => navigate(`/details/${item.productname}`)}
                       >
-                      Подробнее...
+                      {t("main.more")}
                     </Button>
                   </CardBody>
                 </Card>
@@ -172,7 +175,7 @@ export function Home() {
       <section id="our-work" className="px-4 pt-4 md:pt-30 pb-12 sm:pb-48 bg-[#00544F]">
         <div className=" mx-auto 2xl:mx-[2%]">
           <Typography variant="lead" className="font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-[60px] lg:text-[88px]">
-            Наши работы
+            {t("main.our_work")}
           </Typography>
           <div className="space-y-11">
             <MasonryGridGallery />

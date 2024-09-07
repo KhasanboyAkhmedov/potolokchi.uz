@@ -11,7 +11,56 @@
         "contact_us" : "Contact us"
     },
     "main" : {
-        "our_products" : "Our products"
+        "our_products" : "Our products",
+        "more": "More...",
+        "our_work": "Our work"
+    },
+    "footer": {
+        "call_me": "Call me back",
+        "location": "Dzharkurganskaya street, 20/3, Tashkent"
+    },
+    "carousel_info" : {
+        "grilyato": "Grilyato",
+        "grilyato_description": "Grilyato ceilings are unique with their lattice structure, which provides modern style, excellent ventilation and ease of installation.",
+        "classic_grilyato": "Classic Grilyato",
+        "classic_grilyato_description": "The classic Grilyato ceiling is a time-tested solution, characterized by strict lines and a laconic design. Its lattice structure creates a sense of order and symmetry, ideal for creating stylish and functional interiors. These ceilings are easy to install and maintain, providing good ventilation and durability. Classic Grilyato fits perfectly into both office and residential spaces, emphasizing their elegance and modern style.",
+        "pyramid_grilyato": "Pyramid Grilyato",
+        "pyramid_grilyato_description": "The Grilyato pyramid ceiling is a modern and original solution that stands out for its volumetric cell structure, creating a dynamic visual effect. The unique pyramid shape design gives the ceiling depth and character, making the space more expressive and memorable. These ceilings are not only stylish, but also functional, providing excellent ventilation and ease of maintenance. Pyramid Grilyato is ideal for interiors where a combination of aesthetics and practicality is required, be it an office or residential space.",
+        "triangular_grilyato": "Triangular Grilyato",
+        "triangular_grilyato_description": "Grilyato's triangular ceiling attracts attention with its non-standard geometry, creating interesting light and shadow effects and adding dynamics to the space. Its original triangular structure provides a unique visual accent, making the interior more modern and expressive. These ceilings are not only aesthetically pleasing, but also functional, guaranteeing good ventilation and ease of maintenance. Triangular Grilyato is ideal for creating stylish and innovative interiors, be it office space or living space.",
+        
+        "rechniy": "Rack",
+        "rechniy_description": "Racked ceilings bring a modern look with high durability, ease of installation and ease of maintenance, ideal for creating stylish interiors.",
+        "classic_rechniy": "Rack",
+        "classic_rechniy_description": "The Racked ceiling is a stylish and practical solution, which is distinguished by its linear design, giving clarity and harmony to the space. Its sleek and elegant slats create a modern and minimalist look, ideal for a variety of interiors. This ceiling is not only visually appealing, but also functional, ensuring ease of maintenance and durability. The slatted ceiling fits perfectly into office and residential spaces, adding lightness and modern charm to them.",
+        
+        "armstong": "Armstrong",
+        "armstong_decription": "Armstrong ceilings feature a modular design that provides ease of installation, ease of maintenance and modern style for any interior.",
+        "classic_armstrong": "Armstrong Cassette",
+        "classic_armstrong_description": "The Armstrong cassette ceiling is a practical and stylish solution that stands out for its modular design and clear lines. Its panels are easy to install and replace, providing ease of installation and maintenance. This ceiling is ideal for creating an orderly and neat interior, adding modernity and elegance to the space. The Armstrong cassette ceiling fits perfectly into office and commercial spaces, providing functionality and durability, while maintaining an aesthetic appearance.",
+        "mineral_armstrong": "Armstrong mineral fiber",
+        "mineral_armstrong_description": "Armstrong mineral fiber ceiling is a versatile and environmentally friendly solution that combines excellent acoustic properties and modern design. Its mineral fiber panels provide high levels of sound absorption and thermal insulation, creating a comfortable indoor atmosphere. This ceiling is easy to install and maintain, making it an ideal choice for office and commercial spaces where both functionality and aesthetics are important. The Armstrong mineral fiber ceiling adds coziness and modern style to the interior, meeting all the requirements for quality and durability.",
+        "folga_armstrong": "Armstrong from foil",
+        "folga_armstrong_description": "The Armstrong foil ceiling is a modern and functional solution that stands out for its reflective surface and stylish appearance. Foil panels give the room the effect of spaciousness and light, visually increasing the space. This ceiling is not only aesthetically attractive, but is also highly resistant to moisture, making it an ideal choice for rooms with high humidity. Armstrong foil ceilings are easy to install and maintain, providing durability and modern design in office and commercial interiors.",
+        "gips_armstrong": "Armstrong from plaster",
+        "gips_armstrong_description": "The Armstrong gypsum ceiling is an elegant and durable solution that combines classic design and excellent performance. Gypsum panels provide high sound insulation and fire resistance, creating a safe and comfortable space. This ceiling is ideal for interiors where both aesthetics and functionality are important. The ease of installation and maintenance makes the Armstrong gypsum ceiling an excellent choice for office, residential and commercial premises, giving them a stylish and finished look.",
+
+        "led": "LED",
+        "led_description": "LED ceilings combine contemporary design with recessed lighting, providing brightness and energy efficiency, creating a stylish and functional interior.",
+        "led_armstrong": "Led for ceiling Armstrong",
+        "led_armstrong_description": "Armstrong LED ceiling panels are a practical solution that provides bright and uniform lighting. Easily installed into a modular ceiling structure, creating a modern and comfortable interior, ideal for offices and commercial spaces.",
+        "led_grilyato": "Led for Grilyato ceilings",
+        "led_grilyato_description": "LED panels for Grilyato ceilings are a modern solution that provides uniform lighting and a stylish look. They are easy to install, economical and add a light accent that highlights the unique structure of the ceiling. Ideal for office and commercial spaces, creating a comfortable and productive atmosphere.",
+        "led_rechniy": "Led for racked ceilings",
+        "led_rechniy_description": "LED panels for racked ceilings are functional and stylish lighting that can be easily integrated into the design. They provide uniform light, emphasizing the strict lines of the ceiling, and are ideal for modern office and residential interiors."
+        
+    },
+    "carousel": {
+        "order_now": "Order now",
+        "colors": "Colors:",
+        "power": "• Power",
+        "alyumin_reyka": "Led Aluminum Slats  50mm",
+        "sizes": "Sizes: 30cm, 50cm, 70cm"
     }
 
 }   

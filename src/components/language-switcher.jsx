@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
@@ -10,7 +10,7 @@ const LanguageToggler = () => {
   const options = [
     { label: "Русский", value: "ru" },
     { label: "English", value: "en" },
-    { label: "Uzbek", value: "uz" },
+    { label: "Узбек", value: "uz" },
   ];
 
   const toggleDrawer = () => {
@@ -23,11 +23,6 @@ const LanguageToggler = () => {
     i18n.changeLanguage(selectedLanguage.value);
     setIsOpen(false);
   };
-
-
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng);
-  // };
 
   return (
     <div className="relative">

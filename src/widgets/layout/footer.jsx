@@ -2,10 +2,12 @@
 import Modal from "@/components/modal";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const year = new Date().getFullYear();
 
 export function Footer() {
+  const {t} = useTranslation();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
   return (
@@ -22,7 +24,7 @@ export function Footer() {
             <a href='https://yandex.ru/maps?whatshere%5Bpoint%5D=69.33813607119373%2C41.27625253467027&whatshere%5Bzoom%5D=17.13989&ll=69.33813607119373%2C41.27625253429472&z=17.13989&si=etvpc8cmazrj0mkc8aygc4h07r'
               target="_blank" rel="noopener noreferrer"
               className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
-              Джаркурганская улица, 20/3, Ташкент
+              {t("footer.location")}
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -89,7 +91,7 @@ export function Footer() {
               }}
               onClick={handleOpen}
               >
-                Перезвоните мне
+                {t("footer.call_me")}
             </Button>
           </div>
         </div>

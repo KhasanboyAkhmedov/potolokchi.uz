@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import topSaleProduct from '../../public/img/topSales.png'
+import { useTranslation } from 'react-i18next';
 
 const Carousel = ({product, images, productname}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);  
+  const {t} = useTranslation();
 
   const handleThumbnailClick = (index) => {
     setSelectedIndex(index);
@@ -16,6 +18,9 @@ const Carousel = ({product, images, productname}) => {
   const goToNext = () => {
     setSelectedIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
+
+  console.log(product);
+  
 
 
   return (
@@ -63,7 +68,7 @@ const Carousel = ({product, images, productname}) => {
           ))}
         </div>
       </div>
-      <div className="w-full  md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-6 xl:px-8">
+      <div className="w-full mt-4 md:mt-0 lg:w-1/2 flex  flex-col space-y-4 lg:space-y-8 text-center  items-center md:text-start  md:items-start text-white flex-wrap px-3 md:px-4 lg:px-6 xl:px-8">
         <h1 className='text-4xl lg:text-6xl xl:text-7xl 3xl:text-8xl  font-semibold'>{product.subname}</h1>
         <p className='text-sm lg:text-base xl:text-sm  3xl:text-xl'>{product.pdescription}</p>
         {productname !== 'led' &&
@@ -83,16 +88,16 @@ const Carousel = ({product, images, productname}) => {
           ))}
         </div>
         }
-        {product.subname == 'Led для Реечных потолков' &&
+        {product.subname == 'Led для Реечных потолков' || product.subname == 'Led реечный' || product.subname == 'Led for racked ceilings'  &&
           <>
             <p className='text-xl bg-gradient-to-t from-[#BB824A] to-[#E9C775] bg-clip-text text-transparent'>
-              Алюминиевые Рейки лед 50mm
+              {t("carousel.alyumin_reyka")}
             </p>
             <div>
               {product.colors.length > 0 && 
                 <div className='flex flex-row items-center'>
                   <p className='text-base lg:text-lg 3xl:text-xl md:mr-2 lg:mr-1 3xl:mr-4'>
-                    Цвета:
+                    {t("carousel.colors")}
                   </p>
                   {product.colors.map((color, index) => (
                     <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
@@ -107,13 +112,13 @@ const Carousel = ({product, images, productname}) => {
 
         {product.power && product.power.length > 0 && 
           <div className='flex flex-col  sm:justify-center md:justify-normal  xsm:space-x-1  md:space-x-1 flex-wrap gap-1 '>
-            {product.subname == 'Led для Реечных потолков' &&
+            {product.subname == 'Led для Реечных потолков' || product.subname == 'Led реечный' || product.subname == 'Led for racked ceilings' &&
               <p className='text-xl mb-5 bg-gradient-to-t from-[#BB824A] to-[#E9C775] bg-clip-text text-transparent'>
-                Размеры: 30cm, 50cm, 70cm
+                {t("carousel.sizes")}
               </p>
             }
             <p className='text-base lg:text-lg mb-4'>
-              • Мощность {product.subname == 'Led для Реечных потолков' && "(1 метр)"}
+              {t("carousel.power")} {product.subname == 'Led для Реечных потолков' && "(1 метр)"}
             </p>
             <div className='flex flex-row items-center justify-center md:justify-start gap-1 flex-wrap'>
               {product.power.map((pow, index) => (
@@ -134,7 +139,7 @@ const Carousel = ({product, images, productname}) => {
           {product.colors.length > 0 && product.subname !== 'Led для Реечных потолков' &&
           <div className='flex flex-row items-center'>
             <p className='text-base lg:text-lg 3xl:text-xl md:mr-2 lg:mr-1 3xl:mr-4'>
-              Цвета:
+              {t("carousel.colors")}
             </p>
             {product.colors.map((color, index) => (
               <div key={index} className={`w-8 h-8 3xl:w-10 3xl:h-10 ${color} mx-1 lg:mx-1 rounded-lg`}/>
@@ -156,7 +161,7 @@ const Carousel = ({product, images, productname}) => {
               e.currentTarget.style.backgroundSize = '100% 40%';
             }}
             >
-              Заказать сейчас
+              {t("carousel.order_now")}
           </a>
           
         </div>

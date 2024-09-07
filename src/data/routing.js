@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-export const routes = () => {
+export const useInnerRouter = () => {
   const { t } = useTranslation();
 
   return [
@@ -28,7 +28,7 @@ export const routes = () => {
   ];
 };
 
-export default routes;
+export default useInnerRouter;
 
 
 // export const routes = [

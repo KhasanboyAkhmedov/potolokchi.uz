@@ -1,12 +1,14 @@
 import { Footer, Navbar } from '@/widgets/layout';
 import { useNavigate, useParams } from 'react-router-dom';
 import Carousel from '@/components/Carousel';
-import carousel from '@/data/carousel-data';
-import { routes } from '@/data';
+import { useCarousel } from '@/data/carousel-data';
+import {  useInnerRouter } from '@/data';
 
 
 const DetailsPage = () => {
   const { itemName } = useParams();
+  const routes = useInnerRouter();
+  const carousel = useCarousel();
   const item = carousel.find((item) => item.productname === itemName);
   const navigate = useNavigate();
 

@@ -11,8 +11,6 @@ import LanguageToggler from "@/components/language-switcher";
 
 export function Navbar({ routes }) {
   const [openNav, setOpenNav] = useState(false);
-
-  console.log(" Routes",routes);
   
   useEffect(() => {
     window.addEventListener(
