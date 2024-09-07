@@ -19,6 +19,9 @@ export function Home() {
   const routes = useRoutes();
   const {t} = useTranslation();
   const carousel = useCarousel();
+  const cardData = useCardData();
+  console.log(cardData);
+  
   console.log(carousel);
   
   return (
@@ -31,11 +34,9 @@ export function Home() {
           <div className="flex flex-wrap items-center justify-center h-full">
             <div className="mx-auto w-full px-4 text-center">
               <p className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-siteFont font-medium text-white">
-                {/* Потолки нового уровня */}
                 {t('hero_section.new_level')}
               </p>
               <p className="text-white text-base sm:text-lg lg:text-xl opacity-80 font-siteFont font-medium">
-                {/* Мы воплощаем ваши идеи в реальность, создавая уют и стиль! */}
                 {t("hero_section.we_style")}
               </p>
               <Button onClick={(e) => {
@@ -65,11 +66,18 @@ export function Home() {
       <section id="our-products" className=" px-4 pb-20 pt-4 bg-[#00544F]">
         <div className=" mx-auto ">
           <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
-            {[0, 1,2].map((_, index) => (
+            {/* {[0, 1,2].map((_, index) => (
               <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
                <img src={`/img/feature_card_${index + 1}.png`} />
               </div>
+            ))} */}
+            {cardData.map((item, index) => (
+              <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
+                <HeaderCard title={item.name}/>
+               {/* <img src={`/img/feature_card_${index + 1}.png`} /> */}
+              </div>
             ))}
+            
           </div>
           <div className="w-full mt-12 sm:mt-28 flex flex-wrap items-center ">
             <Typography variant="lead" className="w-full  font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-6xl  xl:text-8xl">
@@ -171,7 +179,7 @@ export function Home() {
           </div>
         </div>
       </section>
-    
+
       <section id="our-work" className="px-4 pt-4 md:pt-30 pb-12 sm:pb-48 bg-[#00544F]">
         <div className=" mx-auto 2xl:mx-[2%]">
           <Typography variant="lead" className="font-siteFont font-medium text-white text-center mb-16 text-4xl md:text-[60px] lg:text-[88px]">
@@ -182,7 +190,7 @@ export function Home() {
           </div>
         </div>
       </section>
-     
+      
       <section id="contact-us"  className="bg-white">
         <Footer />
       </section>
@@ -198,6 +206,8 @@ export default Home;
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
+import HeaderCard from "@/components/header-card";
+import useCardData from "@/data/card-data";
 
 function CustomButtonGroup({ next, previous }) {
   return (

@@ -32,6 +32,11 @@
         "send": "Send",
         "cancel": "Cancel"
     },
+    "card_info": {
+        "high_quality": "High quality materials and work",
+        "individual_approach": "Individual approach",
+        "prof_team": "Professional team"
+    },
     "carousel_info" : {
         "grilyato": "Grilyato",
         "grilyato_description": "Grilyato ceilings are unique with their lattice structure, which provides modern style, excellent ventilation and ease of installation.",
