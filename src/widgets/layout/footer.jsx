@@ -12,7 +12,7 @@ export function Footer() {
   const handleOpen = () => setOpen(!open);
   return (
     <footer className=" font-siteFont flex justify-center">
-      <div className="relative h-full w-full bg-[url('/img/bg_footer.jpg')] bg-cover bg-center flex justify-center md:justify-end  items-center py-10  ">
+      <div className="relative h-full w-full bg-[url('/img/bg_footer.avif')] bg-cover bg-center flex justify-center md:justify-end  items-center py-10  ">
         {/* <div className="bg-[#00544F] max-w-xl w-full sm:w-auto px-8 py-12 sm:py-16 mx-auto md:mr-8 sm:rounded-3xl space-y-6"> */}
         <div className="bg-[#00544F] max-w-xl w-[90%] xsm:w-[350px] sm:w-auto px-8 py-12 sm:py-16  md:mr-8 rounded-3xl space-y-6">
           <div className="flex items-center gap-4">

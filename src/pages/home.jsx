@@ -29,7 +29,7 @@ export function Home() {
         <Navbar routes={routes} />
       </div>
       <section id="home" >
-        <div className=" flex items-center justify-center max-w-8xl w-full h-[75vh] md:h-screen 2xl:h-[600px] 3xl:h-[800px] mx-auto bg-[url('/img/bg_header1.jpg')] bg-cover bg-center">
+        <div className=" flex items-center justify-center max-w-8xl w-full h-[75vh] md:h-screen 2xl:h-[600px] 3xl:h-[800px] mx-auto bg-[url('/img/bg_header1.avif')] bg-cover bg-center">
           <div className="flex flex-wrap items-center justify-center h-full">
             <div className="mx-auto w-full px-4 text-center">
               <p className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-siteFont font-medium text-white">
@@ -65,14 +65,9 @@ export function Home() {
       <section id="our-products" className=" px-4 pb-20 pt-4 bg-[#00544F]">
         <div className=" mx-auto ">
           <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
-            {/* {[0, 1,2].map((_, index) => (
-              <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
-               <img src={`/img/feature_card_${index + 1}.png`} />
-              </div>
-            ))} */}
             {cardData.map((item, index) => (
               <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
-               <img  src={`/img/bg-trigger1.png`} loading="lazy" alt="card about our work" className=" w-full"/>
+               <img  src={`/img/bg-trigger1.png`} loading="lazy" alt="card about our quality of work" className=" w-full"/>
                <div className="absolute inset-1 top-10 flex flex-col justify-center mx-auto items-center w-[80%]">
                 <p className="xsm:text-lg text-base sm:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center font-semibold font-montserrat tracking-tight text-[#00544F] ">{item.name}</p>
                </div>

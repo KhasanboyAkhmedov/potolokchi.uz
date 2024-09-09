@@ -90,12 +90,12 @@ export const useCarousel = () => {
     {
       "name" : t("carousel_info.rechniy"),
       "productname": "rechniy",
-      "imageUrl": "/img/rechniy/1.png",
+      "imageUrl": "/img/rechniy/1.avif",
       "subtypes" : [
         {
           "subname": t("carousel_info.classic_rechniy"),
           "imageUrls": [
-            "/img/rechniy/1.png",
+            "/img/rechniy/1.avif",
             "/img/rechniy/1.jpg",
             "/img/rechniy/3.jpg",
             "/img/rechniy/4.jpg",
