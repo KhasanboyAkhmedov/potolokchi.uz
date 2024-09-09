@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+
+
+Sitemap: https://www.potolokchiuz.uz/sitemap.xml

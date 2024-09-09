@@ -5,6 +5,7 @@ import {
   MobileNav,
   Typography,
   IconButton,
+  Collapse,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import LanguageToggler from "@/components/language-switcher";
@@ -85,14 +86,14 @@ export function Navbar({ routes }) {
           </IconButton>
         </div>
       </div>
-      <MobileNav
+      <Collapse
         className={`${ openNav && 'my-2'} rounded-xl  bg-white px-4  text-blue-gray-900`}
         open={openNav}
       >
         <div className="container mx-auto" onClick={() => setOpenNav(!openNav)} >
           {navList}
         </div>
-      </MobileNav>
+      </Collapse>
     </MTNavbar>
   );
 }
