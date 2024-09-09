@@ -14,12 +14,14 @@ import { useRoutes } from "@/routes";
 import  { useCarousel } from "@/data/carousel-data";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
+import useCardData from "@/data/card-data";
 
 export function Home() {
   const {t} = useTranslation();
   const navigate = useNavigate();
   const routes = useRoutes();
   const carousel = useCarousel();
+  const cardData = useCardData();
   
   return (
     <>
@@ -63,9 +65,17 @@ export function Home() {
       <section id="our-products" className=" px-4 pb-20 pt-4 bg-[#00544F]">
         <div className=" mx-auto ">
           <div className="-mt-16 xsm:-mt-20 lg:-mt-24 xl:-mt-32 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 md:px-0">
-            {[0, 1,2].map((_, index) => (
+            {/* {[0, 1,2].map((_, index) => (
               <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
                <img src={`/img/feature_card_${index + 1}.png`} />
+              </div>
+            ))} */}
+            {cardData.map((item, index) => (
+              <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
+               <img src={`/img/bg-trigger1.png`} className=" w-full"/>
+               <div className="absolute inset-1 top-10 flex flex-col justify-center mx-auto items-center w-[80%]">
+                <p className="xsm:text-lg text-base sm:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center font-semibold font-montserrat tracking-tight text-[#00544F] ">{item.name}</p>
+               </div>
               </div>
             ))}
           </div>

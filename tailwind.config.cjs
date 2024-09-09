@@ -16,7 +16,8 @@ module.exports = withMT({
       },
       fontFamily: {
         siteFont: ["TTHovesProTrial", "sans-serif"],
-        specialFont: ["TTHovesProTrialExpandedLight", "sans-serif"]
+        specialFont: ["TTHovesProTrialExpandedLight", "sans-serif"],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
     },
   },

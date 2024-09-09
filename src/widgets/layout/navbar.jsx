@@ -27,7 +27,7 @@ export function Navbar({ routes }) {
           as="li"
           variant="paragraph"
           color="inherit"
-          className="capitalize 3xl:text-xl"
+          className="capitalize 3xl:text-xl whitespace-nowrap"
         >
           {main ? 
             <Link 

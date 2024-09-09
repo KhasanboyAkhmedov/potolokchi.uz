@@ -11,7 +11,7 @@ export const useCardData = () => {
             "name" : t("card_info.individual_approach"),
         },
         {
-            "name" : t("card_info.prof_team"),
+            "name" : `${t("card_info.prof_team")}\n${t("card_info.prof_team2")}`,
         }
     ]
 };
