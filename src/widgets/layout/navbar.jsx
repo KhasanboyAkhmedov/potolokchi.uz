@@ -77,6 +77,7 @@ export function Navbar({ routes }) {
             color="white"
             className="ml-auto text-inherit  hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
             onClick={() => setOpenNav(!openNav)}
+            aria-label={openNav ? "Close menu" : "Open menu"}
           >
             {openNav ? (
               <XMarkIcon strokeWidth={2} className="h-6 w-6" />

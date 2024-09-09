@@ -72,7 +72,7 @@ export function Home() {
             ))} */}
             {cardData.map((item, index) => (
               <div key={index} className="relative  mx-auto w-auto xsm:w-[75%] md:w-auto ">
-               <img src={`/img/bg-trigger1.png`} alt="card about our work" className=" w-full"/>
+               <img  src={`/img/bg-trigger1.png`} loading="lazy" alt="card about our work" className=" w-full"/>
                <div className="absolute inset-1 top-10 flex flex-col justify-center mx-auto items-center w-[80%]">
                 <p className="xsm:text-lg text-base sm:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl text-center font-semibold font-montserrat tracking-tight text-[#00544F] ">{item.name}</p>
                </div>
@@ -143,6 +143,7 @@ export function Home() {
                       alt="Card Image"
                       src={item.imageUrl}
                       className="h-full w-full"
+                      loading="lazy"
                     />
                   </CardHeader>
                   <CardBody >

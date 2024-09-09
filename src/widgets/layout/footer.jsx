@@ -20,6 +20,7 @@ export function Footer() {
               className="h-6 w-auto"
               src="/img/gps.png"
               alt="location"
+              loading="lazy"
             />
             <a href='https://yandex.ru/maps?whatshere%5Bpoint%5D=69.33813607119373%2C41.27625253467027&whatshere%5Bzoom%5D=17.13989&ll=69.33813607119373%2C41.27625253429472&z=17.13989&si=etvpc8cmazrj0mkc8aygc4h07r'
               target="_blank" rel="noopener noreferrer"
@@ -32,6 +33,7 @@ export function Footer() {
             className="h-6 w-auto"
               src="/img/phone-call.png"
               alt="phone"
+              loading="lazy"
             />
             <a href="tel:+998335552208" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
             +998 (33) 555-22-08
@@ -42,6 +44,7 @@ export function Footer() {
             className="h-6 w-auto"
               src="/img/phone-call.png"
               alt="phone"
+              loading="lazy"
             />
             <a href="tel:+998335552204" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
             +998 (33) 555-22-04
@@ -52,6 +55,7 @@ export function Footer() {
             className="h-6 w-auto"
               src="/img/instagram.png"
               alt="instagram"
+              loading="lazy"
             />
             <a href="https://www.instagram.com/potolokchi.uz"  target="_blank" 
             rel="noopener noreferrer" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
@@ -62,6 +66,7 @@ export function Footer() {
             className="h-6 w-auto"
               src="/img/telegram.png"
               alt="telegram"
+              loading="lazy"
             />
             <a href="https://t.me/potolokchiuz" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">
               Telegram
@@ -72,6 +77,7 @@ export function Footer() {
             className="h-6 w-auto"
               src="/img/youtube.png"
               alt="youtube"
+              loading="lazy"
             />
             <a href="https://www.youtube.com/@potolokchiuz"  target="_blank" rel="noopener noreferrer" className="text-white text-base xsm:text-lg md:text-xl lg:text-[21px]">Youtube</a>
           </div>
