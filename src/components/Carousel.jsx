@@ -29,7 +29,7 @@ const Carousel = ({product, images, productname}) => {
         <div className="relative w-full  h-full sm:h-[300px] md:w-[350px] md:h-[300px] lg:w-[450px] lg:h-[400px] xl:w-[580px] xl:h-[400px] 3xl:w-[800px] 3xl:h-[500px] rounded-xl ">
           <img
             src={product.imageUrls[selectedIndex]}
-            alt={`Slide ${selectedIndex}`}
+            alt={`${product.subname}'s Photo`}
             className="w-full h-full object-cover rounded-xl"
           />
           {product.imageUrls && product.imageUrls.length > 1 
@@ -37,6 +37,8 @@ const Carousel = ({product, images, productname}) => {
             <button
               onClick={goToPrevious}
               className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+              aria-label="Arrow Left Icon"
+              aria-hidden={true}
             >
               
               <ArrowLongLeftIcon className="w-6 h-6 3xl:w-8 3xl:h-8 text-[#E9C775]" />
@@ -44,6 +46,8 @@ const Carousel = ({product, images, productname}) => {
             <button
               onClick={goToNext}
               className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+              aria-label="Arrow Right Icon"
+              aria-hidden={true}
             >
 
               <ArrowLongRightIcon className="w-6 h-6 3xl:w-8 3xl:h-8 text-[#E9C775]" />
@@ -59,7 +63,7 @@ const Carousel = ({product, images, productname}) => {
             <img
               key={index}
               src={image}
-              alt={`Thumbnail ${index}`}
+              alt={`Photo of ${product.subname}}`}
               className={`w-16 h-14 xsm:w-24 xsm:h-16 sm:w-28 sm:h-20 md:w-20 lg:w-24 xl:w-32 md:h-16 xl:h-20 3xl:w-40 3xl:h-28 object-cover cursor-pointer border-2  rounded-lg ${
                 selectedIndex === index ? 'border-blue-500' : 'border-transparent'
               }`}
