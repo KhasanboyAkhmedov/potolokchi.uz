@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
 const LanguageToggler = () => {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState('Русский')
   const [isOpen, setIsOpen] = useState(false);
+  
+  const savedLanguage = localStorage.getItem('i18nextLng') || 'Русский';
+  const [language, setLanguage] = useState('')
 
   const options = [
     { label: "Русский", value: "ru-RU" },
     { label: "English", value: "en" },
-    { label: "Узбек", value: "uz" },
+    { label: "Uzbek", value: "uz" },
   ];
 
   const toggleDrawer = () => {
@@ -23,6 +25,12 @@ const LanguageToggler = () => {
     i18n.changeLanguage(selectedLanguage.value);
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const savedLanguageValue = options.find(opt => opt.value === savedLanguage)?.value || 'ru-RU';
+    setLanguage(options.find(opt => opt.value === localStorage.getItem('i18nextLng'))?.label || 'Русский')
+    i18n.changeLanguage(savedLanguageValue);
+  }, []);
 
   return (
     <div className="relative">

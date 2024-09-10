@@ -208,12 +208,16 @@ function CustomButtonGroup({ next, previous }) {
       <button
         onClick={previous}
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 rounded-full p-2 shadow-md"
+        aria-label="Left icon"
+        aria-hidden={true}
       >
         <ChevronLeftIcon className="w-6 h-6 text-white" />
       </button>
       <button
         onClick={next}
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 rounded-full p-2 shadow-md"
+        aria-label="Right icon"
+        aria-hidden={true}
       >
         <ChevronRightIcon className="w-6 h-6 text-white " />
       </button>
