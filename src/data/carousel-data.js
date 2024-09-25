@@ -216,9 +216,8 @@ export const useCarousel = () => {
         {
           "subname": t("carousel_info.led_armstrong"),
           "imageUrls": [
-            "/img/led_armstrong/led_armstrong1.png",
-            "/img/led_armstrong/led_armstrong2.png",
-            "/img/led_armstrong/led_armstrong3.png",
+            "/img/led_armstrong/led_armstrong1.avif",
+            "/img/led_armstrong/led_armstrong2.avif",
           ],
           "topSize" : [
           ],
@@ -239,7 +238,8 @@ export const useCarousel = () => {
         {
           "subname": t("carousel_info.led_grilyato"),
           "imageUrls": [
-            "/img/led-main.jpg",
+            "/img/led_grilyato/led_grilyato1.avif",
+            "/img/led_grilyato/led_grilyato2.avif",
           ],
           "topSize" : [
           ],
