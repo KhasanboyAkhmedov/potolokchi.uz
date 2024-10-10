@@ -80,6 +80,23 @@ const Modal = ({open , handleOpen}) => {
 
     return (
      <>
+        <Helmet>
+          <head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16733098452"></script>
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16733098452');
+              gtag('event', 'conversion', {
+                'send_to': 'AW-16733098452/L7MgCO6SpdsZENSj-6o-',
+                'transaction_id': ''
+              });
+            `}
+          </script>
+          </head>
+        </Helmet>
         <Dialog className="bg-[#00544F] " open={open} size="md" handler={handleOpen}>
           <div className="flex items-center justify-end mt-3 text-white">
             <svg
